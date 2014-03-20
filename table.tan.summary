@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 5.895 ns
+From           : wr_en
+To             : nBitRegister:flag_reg|\G0:16:dFFs
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.638 ns
+From           : lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[0]
+To             : write_idx[0]
+From Clock     : clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -3.933 ns
+From           : wr_en
+To             : nBitRegister:flag_reg|\G0:29:dFFs
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 208.99 MHz ( period = 4.785 ns )
+From           : lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]
+To             : lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

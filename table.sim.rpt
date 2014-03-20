@@ -1,0 +1,578 @@
+Simulator report for table
+Thu Mar 06 14:16:05 2014
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 262 nodes    ;
+; Simulation Coverage         ;      37.79 % ;
+; Total Number of Transitions ; 557          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C5F256C6  ;
++-----------------------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                        ;
++--------------------------------------------------------------------------------------------+--------------+---------------+
+; Option                                                                                     ; Setting      ; Default Value ;
++--------------------------------------------------------------------------------------------+--------------+---------------+
+; Simulation mode                                                                            ; Timing       ; Timing        ;
+; Start time                                                                                 ; 0 ns         ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF         ;               ;
+; Vector input source                                                                        ; lru_test.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On           ; On            ;
+; Check outputs                                                                              ; Off          ; Off           ;
+; Report simulation coverage                                                                 ; On           ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On           ; On            ;
+; Display missing 1-value coverage report                                                    ; On           ; On            ;
+; Display missing 0-value coverage report                                                    ; On           ; On            ;
+; Detect setup and hold time violations                                                      ; Off          ; Off           ;
+; Detect glitches                                                                            ; Off          ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off          ; Off           ;
+; Generate Signal Activity File                                                              ; Off          ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off          ; Off           ;
+; Group bus channels in simulation results                                                   ; Off          ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On           ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE   ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off          ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off          ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto         ; Auto          ;
++--------------------------------------------------------------------------------------------+--------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      37.79 % ;
+; Total nodes checked                                 ; 262          ;
+; Total output ports checked                          ; 262          ;
+; Total output ports with complete 1/0-value coverage ; 99           ;
+; Total output ports with no 1/0-value coverage       ; 152          ;
+; Total output ports with no 1-value coverage         ; 154          ;
+; Total output ports with no 0-value coverage         ; 161          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                              ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+------------------+
+; Node Name                                                                 ; Output Port Name                                                          ; Output Port Type ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+------------------+
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[1]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[1]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[2]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[2]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[3]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[3]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[4]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[4]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[8]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[8]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[9]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[9]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[10] ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[10] ; regout           ;
+; |lru|curr_state.valid                                                     ; |lru|curr_state.valid                                                     ; regout           ;
+; |lru|curr_state.search                                                    ; |lru|curr_state.search                                                    ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:10:dFFs                                    ; |lru|nBitRegister:flag_reg|\G0:10:dFFs                                    ; regout           ;
+; |lru|has_valid~12                                                         ; |lru|has_valid~12                                                         ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:8:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:8:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:9:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:9:dFFs                                     ; regout           ;
+; |lru|has_valid~14                                                         ; |lru|has_valid~14                                                         ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:6:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:6:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:7:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:7:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:4:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:4:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:5:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:5:dFFs                                     ; regout           ;
+; |lru|has_valid~16                                                         ; |lru|has_valid~16                                                         ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:2:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:2:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:3:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:3:dFFs                                     ; regout           ;
+; |lru|has_valid~17                                                         ; |lru|has_valid~17                                                         ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:0:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:0:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:1:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:1:dFFs                                     ; regout           ;
+; |lru|has_valid~18                                                         ; |lru|has_valid~18                                                         ; combout          ;
+; |lru|has_valid~19                                                         ; |lru|has_valid~19                                                         ; combout          ;
+; |lru|has_valid~20                                                         ; |lru|has_valid~20                                                         ; combout          ;
+; |lru|Selector1~0                                                          ; |lru|Selector1~0                                                          ; combout          ;
+; |lru|next_state.valid~0                                                   ; |lru|next_state.valid~0                                                   ; combout          ;
+; |lru|curr_state.ready                                                     ; |lru|curr_state.ready                                                     ; regout           ;
+; |lru|Selector1~1                                                          ; |lru|Selector1~1                                                          ; combout          ;
+; |lru|Selector1~2                                                          ; |lru|Selector1~2                                                          ; combout          ;
+; |lru|flags_in[30]~0                                                       ; |lru|flags_in[30]~0                                                       ; combout          ;
+; |lru|flags_in[10]~60                                                      ; |lru|flags_in[10]~60                                                      ; combout          ;
+; |lru|flags_in[10]~61                                                      ; |lru|flags_in[10]~61                                                      ; combout          ;
+; |lru|flags_in[10]~62                                                      ; |lru|flags_in[10]~62                                                      ; combout          ;
+; |lru|flags_in[8]~66                                                       ; |lru|flags_in[8]~66                                                       ; combout          ;
+; |lru|flags_in[8]~67                                                       ; |lru|flags_in[8]~67                                                       ; combout          ;
+; |lru|flags_in[8]~68                                                       ; |lru|flags_in[8]~68                                                       ; combout          ;
+; |lru|flags_in[9]~69                                                       ; |lru|flags_in[9]~69                                                       ; combout          ;
+; |lru|flags_in[9]~70                                                       ; |lru|flags_in[9]~70                                                       ; combout          ;
+; |lru|flags_in[9]~71                                                       ; |lru|flags_in[9]~71                                                       ; combout          ;
+; |lru|flags_in[6]~72                                                       ; |lru|flags_in[6]~72                                                       ; combout          ;
+; |lru|flags_in[6]~73                                                       ; |lru|flags_in[6]~73                                                       ; combout          ;
+; |lru|flags_in[6]~74                                                       ; |lru|flags_in[6]~74                                                       ; combout          ;
+; |lru|flags_in[7]~75                                                       ; |lru|flags_in[7]~75                                                       ; combout          ;
+; |lru|flags_in[7]~76                                                       ; |lru|flags_in[7]~76                                                       ; combout          ;
+; |lru|flags_in[7]~77                                                       ; |lru|flags_in[7]~77                                                       ; combout          ;
+; |lru|flags_in[4]~78                                                       ; |lru|flags_in[4]~78                                                       ; combout          ;
+; |lru|flags_in[4]~79                                                       ; |lru|flags_in[4]~79                                                       ; combout          ;
+; |lru|flags_in[4]~80                                                       ; |lru|flags_in[4]~80                                                       ; combout          ;
+; |lru|flags_in[5]~81                                                       ; |lru|flags_in[5]~81                                                       ; combout          ;
+; |lru|flags_in[5]~82                                                       ; |lru|flags_in[5]~82                                                       ; combout          ;
+; |lru|flags_in[5]~83                                                       ; |lru|flags_in[5]~83                                                       ; combout          ;
+; |lru|flags_in[2]~84                                                       ; |lru|flags_in[2]~84                                                       ; combout          ;
+; |lru|flags_in[2]~85                                                       ; |lru|flags_in[2]~85                                                       ; combout          ;
+; |lru|flags_in[2]~86                                                       ; |lru|flags_in[2]~86                                                       ; combout          ;
+; |lru|flags_in[3]~87                                                       ; |lru|flags_in[3]~87                                                       ; combout          ;
+; |lru|flags_in[3]~88                                                       ; |lru|flags_in[3]~88                                                       ; combout          ;
+; |lru|flags_in[3]~89                                                       ; |lru|flags_in[3]~89                                                       ; combout          ;
+; |lru|flags_in[0]~90                                                       ; |lru|flags_in[0]~90                                                       ; combout          ;
+; |lru|flags_in[0]~91                                                       ; |lru|flags_in[0]~91                                                       ; combout          ;
+; |lru|flags_in[0]~92                                                       ; |lru|flags_in[0]~92                                                       ; combout          ;
+; |lru|flags_in[1]~93                                                       ; |lru|flags_in[1]~93                                                       ; combout          ;
+; |lru|flags_in[1]~94                                                       ; |lru|flags_in[1]~94                                                       ; combout          ;
+; |lru|flags_in[1]~95                                                       ; |lru|flags_in[1]~95                                                       ; combout          ;
+; |lru|Selector0~0                                                          ; |lru|Selector0~0                                                          ; combout          ;
+; |lru|write_idx[1]                                                         ; |lru|write_idx[1]                                                         ; padio            ;
+; |lru|write_idx[2]                                                         ; |lru|write_idx[2]                                                         ; padio            ;
+; |lru|write_idx[3]                                                         ; |lru|write_idx[3]                                                         ; padio            ;
+; |lru|write_idx[4]                                                         ; |lru|write_idx[4]                                                         ; padio            ;
+; |lru|write_idx[5]                                                         ; |lru|write_idx[5]                                                         ; padio            ;
+; |lru|write_idx[6]                                                         ; |lru|write_idx[6]                                                         ; padio            ;
+; |lru|write_idx[7]                                                         ; |lru|write_idx[7]                                                         ; padio            ;
+; |lru|write_idx[8]                                                         ; |lru|write_idx[8]                                                         ; padio            ;
+; |lru|write_idx[9]                                                         ; |lru|write_idx[9]                                                         ; padio            ;
+; |lru|write_idx[10]                                                        ; |lru|write_idx[10]                                                        ; padio            ;
+; |lru|vld                                                                  ; |lru|vld                                                                  ; padio            ;
+; |lru|clk                                                                  ; |lru|clk~corein                                                           ; combout          ;
+; |lru|reset                                                                ; |lru|reset~corein                                                         ; combout          ;
+; |lru|en                                                                   ; |lru|en~corein                                                            ; combout          ;
+; |lru|wr_en                                                                ; |lru|wr_en~corein                                                         ; combout          ;
+; |lru|read_idx[30]                                                         ; |lru|read_idx[30]~corein                                                  ; combout          ;
+; |lru|read_idx[10]                                                         ; |lru|read_idx[10]~corein                                                  ; combout          ;
+; |lru|read_idx[8]                                                          ; |lru|read_idx[8]~corein                                                   ; combout          ;
+; |lru|read_idx[9]                                                          ; |lru|read_idx[9]~corein                                                   ; combout          ;
+; |lru|read_idx[6]                                                          ; |lru|read_idx[6]~corein                                                   ; combout          ;
+; |lru|read_idx[7]                                                          ; |lru|read_idx[7]~corein                                                   ; combout          ;
+; |lru|read_idx[4]                                                          ; |lru|read_idx[4]~corein                                                   ; combout          ;
+; |lru|read_idx[5]                                                          ; |lru|read_idx[5]~corein                                                   ; combout          ;
+; |lru|read_idx[2]                                                          ; |lru|read_idx[2]~corein                                                   ; combout          ;
+; |lru|read_idx[3]                                                          ; |lru|read_idx[3]~corein                                                   ; combout          ;
+; |lru|read_idx[0]                                                          ; |lru|read_idx[0]~corein                                                   ; combout          ;
+; |lru|read_idx[1]                                                          ; |lru|read_idx[1]~corein                                                   ; combout          ;
+; |lru|reset~clkctrl                                                        ; |lru|reset~clkctrl                                                        ; outclk           ;
+; |lru|clk~clkctrl                                                          ; |lru|clk~clkctrl                                                          ; outclk           ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                                   ;
++----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------+
+; Node Name                                                                  ; Output Port Name                                                           ; Output Port Type ;
++----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------+
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[15]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[15]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[16]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[16]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[17]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[17]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[18]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[18]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[19]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[19]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[20]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[20]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[21]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[21]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[22]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[22]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[24]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[24]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[26]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[26]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[27]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[27]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[28]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[28]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[29]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[29]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[30]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[30]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[31]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[31]  ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:31:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:31:dFFs                                     ; regout           ;
+; |lru|has_valid~0                                                           ; |lru|has_valid~0                                                           ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:28:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:28:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:29:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:29:dFFs                                     ; regout           ;
+; |lru|has_valid~1                                                           ; |lru|has_valid~1                                                           ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:26:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:26:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:27:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:27:dFFs                                     ; regout           ;
+; |lru|has_valid~2                                                           ; |lru|has_valid~2                                                           ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:24:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:24:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:25:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:25:dFFs                                     ; regout           ;
+; |lru|has_valid~3                                                           ; |lru|has_valid~3                                                           ; combout          ;
+; |lru|has_valid~4                                                           ; |lru|has_valid~4                                                           ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:22:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:22:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:23:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:23:dFFs                                     ; regout           ;
+; |lru|has_valid~5                                                           ; |lru|has_valid~5                                                           ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:20:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:20:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:21:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:21:dFFs                                     ; regout           ;
+; |lru|has_valid~6                                                           ; |lru|has_valid~6                                                           ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:18:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:18:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:19:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:19:dFFs                                     ; regout           ;
+; |lru|has_valid~7                                                           ; |lru|has_valid~7                                                           ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:16:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:16:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:17:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:17:dFFs                                     ; regout           ;
+; |lru|has_valid~8                                                           ; |lru|has_valid~8                                                           ; combout          ;
+; |lru|has_valid~9                                                           ; |lru|has_valid~9                                                           ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:14:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:14:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:15:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:15:dFFs                                     ; regout           ;
+; |lru|has_valid~10                                                          ; |lru|has_valid~10                                                          ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:12:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:12:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:13:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:13:dFFs                                     ; regout           ;
+; |lru|has_valid~11                                                          ; |lru|has_valid~11                                                          ; combout          ;
+; |lru|has_valid~13                                                          ; |lru|has_valid~13                                                          ; combout          ;
+; |lru|has_valid~15                                                          ; |lru|has_valid~15                                                          ; combout          ;
+; |lru|flags_in[31]~3                                                        ; |lru|flags_in[31]~3                                                        ; combout          ;
+; |lru|flags_in[31]~4                                                        ; |lru|flags_in[31]~4                                                        ; combout          ;
+; |lru|flags_in[31]~5                                                        ; |lru|flags_in[31]~5                                                        ; combout          ;
+; |lru|flags_in[28]~6                                                        ; |lru|flags_in[28]~6                                                        ; combout          ;
+; |lru|flags_in[28]~7                                                        ; |lru|flags_in[28]~7                                                        ; combout          ;
+; |lru|flags_in[28]~8                                                        ; |lru|flags_in[28]~8                                                        ; combout          ;
+; |lru|flags_in[29]~9                                                        ; |lru|flags_in[29]~9                                                        ; combout          ;
+; |lru|flags_in[29]~10                                                       ; |lru|flags_in[29]~10                                                       ; combout          ;
+; |lru|flags_in[29]~11                                                       ; |lru|flags_in[29]~11                                                       ; combout          ;
+; |lru|flags_in[26]~12                                                       ; |lru|flags_in[26]~12                                                       ; combout          ;
+; |lru|flags_in[26]~13                                                       ; |lru|flags_in[26]~13                                                       ; combout          ;
+; |lru|flags_in[26]~14                                                       ; |lru|flags_in[26]~14                                                       ; combout          ;
+; |lru|flags_in[27]~15                                                       ; |lru|flags_in[27]~15                                                       ; combout          ;
+; |lru|flags_in[27]~16                                                       ; |lru|flags_in[27]~16                                                       ; combout          ;
+; |lru|flags_in[27]~17                                                       ; |lru|flags_in[27]~17                                                       ; combout          ;
+; |lru|flags_in[24]~18                                                       ; |lru|flags_in[24]~18                                                       ; combout          ;
+; |lru|flags_in[24]~19                                                       ; |lru|flags_in[24]~19                                                       ; combout          ;
+; |lru|flags_in[24]~20                                                       ; |lru|flags_in[24]~20                                                       ; combout          ;
+; |lru|flags_in[25]~21                                                       ; |lru|flags_in[25]~21                                                       ; combout          ;
+; |lru|flags_in[25]~22                                                       ; |lru|flags_in[25]~22                                                       ; combout          ;
+; |lru|flags_in[25]~23                                                       ; |lru|flags_in[25]~23                                                       ; combout          ;
+; |lru|flags_in[22]~24                                                       ; |lru|flags_in[22]~24                                                       ; combout          ;
+; |lru|flags_in[22]~25                                                       ; |lru|flags_in[22]~25                                                       ; combout          ;
+; |lru|flags_in[22]~26                                                       ; |lru|flags_in[22]~26                                                       ; combout          ;
+; |lru|flags_in[23]~27                                                       ; |lru|flags_in[23]~27                                                       ; combout          ;
+; |lru|flags_in[23]~28                                                       ; |lru|flags_in[23]~28                                                       ; combout          ;
+; |lru|flags_in[23]~29                                                       ; |lru|flags_in[23]~29                                                       ; combout          ;
+; |lru|flags_in[20]~30                                                       ; |lru|flags_in[20]~30                                                       ; combout          ;
+; |lru|flags_in[20]~31                                                       ; |lru|flags_in[20]~31                                                       ; combout          ;
+; |lru|flags_in[20]~32                                                       ; |lru|flags_in[20]~32                                                       ; combout          ;
+; |lru|flags_in[21]~33                                                       ; |lru|flags_in[21]~33                                                       ; combout          ;
+; |lru|flags_in[21]~34                                                       ; |lru|flags_in[21]~34                                                       ; combout          ;
+; |lru|flags_in[21]~35                                                       ; |lru|flags_in[21]~35                                                       ; combout          ;
+; |lru|flags_in[18]~36                                                       ; |lru|flags_in[18]~36                                                       ; combout          ;
+; |lru|flags_in[18]~37                                                       ; |lru|flags_in[18]~37                                                       ; combout          ;
+; |lru|flags_in[18]~38                                                       ; |lru|flags_in[18]~38                                                       ; combout          ;
+; |lru|flags_in[19]~39                                                       ; |lru|flags_in[19]~39                                                       ; combout          ;
+; |lru|flags_in[19]~40                                                       ; |lru|flags_in[19]~40                                                       ; combout          ;
+; |lru|flags_in[19]~41                                                       ; |lru|flags_in[19]~41                                                       ; combout          ;
+; |lru|flags_in[16]~42                                                       ; |lru|flags_in[16]~42                                                       ; combout          ;
+; |lru|flags_in[16]~43                                                       ; |lru|flags_in[16]~43                                                       ; combout          ;
+; |lru|flags_in[16]~44                                                       ; |lru|flags_in[16]~44                                                       ; combout          ;
+; |lru|flags_in[17]~45                                                       ; |lru|flags_in[17]~45                                                       ; combout          ;
+; |lru|flags_in[17]~46                                                       ; |lru|flags_in[17]~46                                                       ; combout          ;
+; |lru|flags_in[17]~47                                                       ; |lru|flags_in[17]~47                                                       ; combout          ;
+; |lru|flags_in[14]~48                                                       ; |lru|flags_in[14]~48                                                       ; combout          ;
+; |lru|flags_in[14]~49                                                       ; |lru|flags_in[14]~49                                                       ; combout          ;
+; |lru|flags_in[14]~50                                                       ; |lru|flags_in[14]~50                                                       ; combout          ;
+; |lru|flags_in[15]~51                                                       ; |lru|flags_in[15]~51                                                       ; combout          ;
+; |lru|flags_in[15]~52                                                       ; |lru|flags_in[15]~52                                                       ; combout          ;
+; |lru|flags_in[15]~53                                                       ; |lru|flags_in[15]~53                                                       ; combout          ;
+; |lru|flags_in[12]~54                                                       ; |lru|flags_in[12]~54                                                       ; combout          ;
+; |lru|flags_in[12]~55                                                       ; |lru|flags_in[12]~55                                                       ; combout          ;
+; |lru|flags_in[12]~56                                                       ; |lru|flags_in[12]~56                                                       ; combout          ;
+; |lru|flags_in[13]~57                                                       ; |lru|flags_in[13]~57                                                       ; combout          ;
+; |lru|flags_in[13]~58                                                       ; |lru|flags_in[13]~58                                                       ; combout          ;
+; |lru|flags_in[13]~59                                                       ; |lru|flags_in[13]~59                                                       ; combout          ;
+; |lru|flags_in[11]~63                                                       ; |lru|flags_in[11]~63                                                       ; combout          ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[0]~0 ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[0]~0 ; combout          ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[1]~1 ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[1]~1 ; combout          ;
+; |lru|write_idx[0]                                                          ; |lru|write_idx[0]                                                          ; padio            ;
+; |lru|write_idx[12]                                                         ; |lru|write_idx[12]                                                         ; padio            ;
+; |lru|write_idx[13]                                                         ; |lru|write_idx[13]                                                         ; padio            ;
+; |lru|write_idx[14]                                                         ; |lru|write_idx[14]                                                         ; padio            ;
+; |lru|write_idx[15]                                                         ; |lru|write_idx[15]                                                         ; padio            ;
+; |lru|write_idx[16]                                                         ; |lru|write_idx[16]                                                         ; padio            ;
+; |lru|write_idx[17]                                                         ; |lru|write_idx[17]                                                         ; padio            ;
+; |lru|write_idx[18]                                                         ; |lru|write_idx[18]                                                         ; padio            ;
+; |lru|write_idx[19]                                                         ; |lru|write_idx[19]                                                         ; padio            ;
+; |lru|write_idx[20]                                                         ; |lru|write_idx[20]                                                         ; padio            ;
+; |lru|write_idx[21]                                                         ; |lru|write_idx[21]                                                         ; padio            ;
+; |lru|write_idx[22]                                                         ; |lru|write_idx[22]                                                         ; padio            ;
+; |lru|write_idx[23]                                                         ; |lru|write_idx[23]                                                         ; padio            ;
+; |lru|write_idx[24]                                                         ; |lru|write_idx[24]                                                         ; padio            ;
+; |lru|write_idx[25]                                                         ; |lru|write_idx[25]                                                         ; padio            ;
+; |lru|write_idx[26]                                                         ; |lru|write_idx[26]                                                         ; padio            ;
+; |lru|write_idx[27]                                                         ; |lru|write_idx[27]                                                         ; padio            ;
+; |lru|write_idx[28]                                                         ; |lru|write_idx[28]                                                         ; padio            ;
+; |lru|write_idx[29]                                                         ; |lru|write_idx[29]                                                         ; padio            ;
+; |lru|write_idx[30]                                                         ; |lru|write_idx[30]                                                         ; padio            ;
+; |lru|write_idx[31]                                                         ; |lru|write_idx[31]                                                         ; padio            ;
+; |lru|read_idx[31]                                                          ; |lru|read_idx[31]~corein                                                   ; combout          ;
+; |lru|read_idx[28]                                                          ; |lru|read_idx[28]~corein                                                   ; combout          ;
+; |lru|read_idx[29]                                                          ; |lru|read_idx[29]~corein                                                   ; combout          ;
+; |lru|read_idx[26]                                                          ; |lru|read_idx[26]~corein                                                   ; combout          ;
+; |lru|read_idx[27]                                                          ; |lru|read_idx[27]~corein                                                   ; combout          ;
+; |lru|read_idx[24]                                                          ; |lru|read_idx[24]~corein                                                   ; combout          ;
+; |lru|read_idx[25]                                                          ; |lru|read_idx[25]~corein                                                   ; combout          ;
+; |lru|read_idx[22]                                                          ; |lru|read_idx[22]~corein                                                   ; combout          ;
+; |lru|read_idx[23]                                                          ; |lru|read_idx[23]~corein                                                   ; combout          ;
+; |lru|read_idx[20]                                                          ; |lru|read_idx[20]~corein                                                   ; combout          ;
+; |lru|read_idx[21]                                                          ; |lru|read_idx[21]~corein                                                   ; combout          ;
+; |lru|read_idx[18]                                                          ; |lru|read_idx[18]~corein                                                   ; combout          ;
+; |lru|read_idx[19]                                                          ; |lru|read_idx[19]~corein                                                   ; combout          ;
+; |lru|read_idx[16]                                                          ; |lru|read_idx[16]~corein                                                   ; combout          ;
+; |lru|read_idx[17]                                                          ; |lru|read_idx[17]~corein                                                   ; combout          ;
+; |lru|read_idx[14]                                                          ; |lru|read_idx[14]~corein                                                   ; combout          ;
+; |lru|read_idx[15]                                                          ; |lru|read_idx[15]~corein                                                   ; combout          ;
+; |lru|read_idx[12]                                                          ; |lru|read_idx[12]~corein                                                   ; combout          ;
+; |lru|read_idx[13]                                                          ; |lru|read_idx[13]~corein                                                   ; combout          ;
+; |lru|read_idx[11]                                                          ; |lru|read_idx[11]~corein                                                   ; combout          ;
++----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                                   ;
++----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------+
+; Node Name                                                                  ; Output Port Name                                                           ; Output Port Type ;
++----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------+
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[0]   ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[0]   ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[15]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[15]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[16]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[16]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[17]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[17]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[18]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[18]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[19]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[19]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[20]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[20]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[21]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[21]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[22]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[22]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[24]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[24]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[26]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[26]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[27]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[27]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[28]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[28]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[29]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[29]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[30]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[30]  ; regout           ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[31]  ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[31]  ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:30:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:30:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:31:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:31:dFFs                                     ; regout           ;
+; |lru|has_valid~0                                                           ; |lru|has_valid~0                                                           ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:28:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:28:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:29:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:29:dFFs                                     ; regout           ;
+; |lru|has_valid~1                                                           ; |lru|has_valid~1                                                           ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:26:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:26:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:27:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:27:dFFs                                     ; regout           ;
+; |lru|has_valid~2                                                           ; |lru|has_valid~2                                                           ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:24:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:24:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:25:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:25:dFFs                                     ; regout           ;
+; |lru|has_valid~3                                                           ; |lru|has_valid~3                                                           ; combout          ;
+; |lru|has_valid~4                                                           ; |lru|has_valid~4                                                           ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:22:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:22:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:23:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:23:dFFs                                     ; regout           ;
+; |lru|has_valid~5                                                           ; |lru|has_valid~5                                                           ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:20:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:20:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:21:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:21:dFFs                                     ; regout           ;
+; |lru|has_valid~6                                                           ; |lru|has_valid~6                                                           ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:18:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:18:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:19:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:19:dFFs                                     ; regout           ;
+; |lru|has_valid~7                                                           ; |lru|has_valid~7                                                           ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:16:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:16:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:17:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:17:dFFs                                     ; regout           ;
+; |lru|has_valid~8                                                           ; |lru|has_valid~8                                                           ; combout          ;
+; |lru|has_valid~9                                                           ; |lru|has_valid~9                                                           ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:14:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:14:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:15:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:15:dFFs                                     ; regout           ;
+; |lru|has_valid~10                                                          ; |lru|has_valid~10                                                          ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:12:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:12:dFFs                                     ; regout           ;
+; |lru|nBitRegister:flag_reg|\G0:13:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:13:dFFs                                     ; regout           ;
+; |lru|has_valid~11                                                          ; |lru|has_valid~11                                                          ; combout          ;
+; |lru|nBitRegister:flag_reg|\G0:11:dFFs                                     ; |lru|nBitRegister:flag_reg|\G0:11:dFFs                                     ; regout           ;
+; |lru|has_valid~13                                                          ; |lru|has_valid~13                                                          ; combout          ;
+; |lru|has_valid~15                                                          ; |lru|has_valid~15                                                          ; combout          ;
+; |lru|flags_in[30]~1                                                        ; |lru|flags_in[30]~1                                                        ; combout          ;
+; |lru|flags_in[30]~2                                                        ; |lru|flags_in[30]~2                                                        ; combout          ;
+; |lru|flags_in[31]~3                                                        ; |lru|flags_in[31]~3                                                        ; combout          ;
+; |lru|flags_in[31]~4                                                        ; |lru|flags_in[31]~4                                                        ; combout          ;
+; |lru|flags_in[31]~5                                                        ; |lru|flags_in[31]~5                                                        ; combout          ;
+; |lru|flags_in[28]~6                                                        ; |lru|flags_in[28]~6                                                        ; combout          ;
+; |lru|flags_in[28]~7                                                        ; |lru|flags_in[28]~7                                                        ; combout          ;
+; |lru|flags_in[28]~8                                                        ; |lru|flags_in[28]~8                                                        ; combout          ;
+; |lru|flags_in[29]~9                                                        ; |lru|flags_in[29]~9                                                        ; combout          ;
+; |lru|flags_in[29]~10                                                       ; |lru|flags_in[29]~10                                                       ; combout          ;
+; |lru|flags_in[29]~11                                                       ; |lru|flags_in[29]~11                                                       ; combout          ;
+; |lru|flags_in[26]~12                                                       ; |lru|flags_in[26]~12                                                       ; combout          ;
+; |lru|flags_in[26]~13                                                       ; |lru|flags_in[26]~13                                                       ; combout          ;
+; |lru|flags_in[26]~14                                                       ; |lru|flags_in[26]~14                                                       ; combout          ;
+; |lru|flags_in[27]~15                                                       ; |lru|flags_in[27]~15                                                       ; combout          ;
+; |lru|flags_in[27]~16                                                       ; |lru|flags_in[27]~16                                                       ; combout          ;
+; |lru|flags_in[27]~17                                                       ; |lru|flags_in[27]~17                                                       ; combout          ;
+; |lru|flags_in[24]~18                                                       ; |lru|flags_in[24]~18                                                       ; combout          ;
+; |lru|flags_in[24]~19                                                       ; |lru|flags_in[24]~19                                                       ; combout          ;
+; |lru|flags_in[24]~20                                                       ; |lru|flags_in[24]~20                                                       ; combout          ;
+; |lru|flags_in[25]~21                                                       ; |lru|flags_in[25]~21                                                       ; combout          ;
+; |lru|flags_in[25]~22                                                       ; |lru|flags_in[25]~22                                                       ; combout          ;
+; |lru|flags_in[25]~23                                                       ; |lru|flags_in[25]~23                                                       ; combout          ;
+; |lru|flags_in[22]~24                                                       ; |lru|flags_in[22]~24                                                       ; combout          ;
+; |lru|flags_in[22]~25                                                       ; |lru|flags_in[22]~25                                                       ; combout          ;
+; |lru|flags_in[22]~26                                                       ; |lru|flags_in[22]~26                                                       ; combout          ;
+; |lru|flags_in[23]~27                                                       ; |lru|flags_in[23]~27                                                       ; combout          ;
+; |lru|flags_in[23]~28                                                       ; |lru|flags_in[23]~28                                                       ; combout          ;
+; |lru|flags_in[23]~29                                                       ; |lru|flags_in[23]~29                                                       ; combout          ;
+; |lru|flags_in[20]~30                                                       ; |lru|flags_in[20]~30                                                       ; combout          ;
+; |lru|flags_in[20]~31                                                       ; |lru|flags_in[20]~31                                                       ; combout          ;
+; |lru|flags_in[20]~32                                                       ; |lru|flags_in[20]~32                                                       ; combout          ;
+; |lru|flags_in[21]~33                                                       ; |lru|flags_in[21]~33                                                       ; combout          ;
+; |lru|flags_in[21]~34                                                       ; |lru|flags_in[21]~34                                                       ; combout          ;
+; |lru|flags_in[21]~35                                                       ; |lru|flags_in[21]~35                                                       ; combout          ;
+; |lru|flags_in[18]~36                                                       ; |lru|flags_in[18]~36                                                       ; combout          ;
+; |lru|flags_in[18]~37                                                       ; |lru|flags_in[18]~37                                                       ; combout          ;
+; |lru|flags_in[18]~38                                                       ; |lru|flags_in[18]~38                                                       ; combout          ;
+; |lru|flags_in[19]~39                                                       ; |lru|flags_in[19]~39                                                       ; combout          ;
+; |lru|flags_in[19]~40                                                       ; |lru|flags_in[19]~40                                                       ; combout          ;
+; |lru|flags_in[19]~41                                                       ; |lru|flags_in[19]~41                                                       ; combout          ;
+; |lru|flags_in[16]~42                                                       ; |lru|flags_in[16]~42                                                       ; combout          ;
+; |lru|flags_in[16]~43                                                       ; |lru|flags_in[16]~43                                                       ; combout          ;
+; |lru|flags_in[16]~44                                                       ; |lru|flags_in[16]~44                                                       ; combout          ;
+; |lru|flags_in[17]~45                                                       ; |lru|flags_in[17]~45                                                       ; combout          ;
+; |lru|flags_in[17]~46                                                       ; |lru|flags_in[17]~46                                                       ; combout          ;
+; |lru|flags_in[17]~47                                                       ; |lru|flags_in[17]~47                                                       ; combout          ;
+; |lru|flags_in[14]~48                                                       ; |lru|flags_in[14]~48                                                       ; combout          ;
+; |lru|flags_in[14]~49                                                       ; |lru|flags_in[14]~49                                                       ; combout          ;
+; |lru|flags_in[14]~50                                                       ; |lru|flags_in[14]~50                                                       ; combout          ;
+; |lru|flags_in[15]~51                                                       ; |lru|flags_in[15]~51                                                       ; combout          ;
+; |lru|flags_in[15]~52                                                       ; |lru|flags_in[15]~52                                                       ; combout          ;
+; |lru|flags_in[15]~53                                                       ; |lru|flags_in[15]~53                                                       ; combout          ;
+; |lru|flags_in[12]~54                                                       ; |lru|flags_in[12]~54                                                       ; combout          ;
+; |lru|flags_in[12]~55                                                       ; |lru|flags_in[12]~55                                                       ; combout          ;
+; |lru|flags_in[12]~56                                                       ; |lru|flags_in[12]~56                                                       ; combout          ;
+; |lru|flags_in[13]~57                                                       ; |lru|flags_in[13]~57                                                       ; combout          ;
+; |lru|flags_in[13]~58                                                       ; |lru|flags_in[13]~58                                                       ; combout          ;
+; |lru|flags_in[13]~59                                                       ; |lru|flags_in[13]~59                                                       ; combout          ;
+; |lru|flags_in[11]~63                                                       ; |lru|flags_in[11]~63                                                       ; combout          ;
+; |lru|flags_in[11]~64                                                       ; |lru|flags_in[11]~64                                                       ; combout          ;
+; |lru|flags_in[11]~65                                                       ; |lru|flags_in[11]~65                                                       ; combout          ;
+; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[0]~0 ; |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[0]~0 ; combout          ;
+; |lru|write_idx[11]                                                         ; |lru|write_idx[11]                                                         ; padio            ;
+; |lru|write_idx[12]                                                         ; |lru|write_idx[12]                                                         ; padio            ;
+; |lru|write_idx[13]                                                         ; |lru|write_idx[13]                                                         ; padio            ;
+; |lru|write_idx[14]                                                         ; |lru|write_idx[14]                                                         ; padio            ;
+; |lru|write_idx[15]                                                         ; |lru|write_idx[15]                                                         ; padio            ;
+; |lru|write_idx[16]                                                         ; |lru|write_idx[16]                                                         ; padio            ;
+; |lru|write_idx[17]                                                         ; |lru|write_idx[17]                                                         ; padio            ;
+; |lru|write_idx[18]                                                         ; |lru|write_idx[18]                                                         ; padio            ;
+; |lru|write_idx[19]                                                         ; |lru|write_idx[19]                                                         ; padio            ;
+; |lru|write_idx[20]                                                         ; |lru|write_idx[20]                                                         ; padio            ;
+; |lru|write_idx[21]                                                         ; |lru|write_idx[21]                                                         ; padio            ;
+; |lru|write_idx[22]                                                         ; |lru|write_idx[22]                                                         ; padio            ;
+; |lru|write_idx[23]                                                         ; |lru|write_idx[23]                                                         ; padio            ;
+; |lru|write_idx[24]                                                         ; |lru|write_idx[24]                                                         ; padio            ;
+; |lru|write_idx[25]                                                         ; |lru|write_idx[25]                                                         ; padio            ;
+; |lru|write_idx[26]                                                         ; |lru|write_idx[26]                                                         ; padio            ;
+; |lru|write_idx[27]                                                         ; |lru|write_idx[27]                                                         ; padio            ;
+; |lru|write_idx[28]                                                         ; |lru|write_idx[28]                                                         ; padio            ;
+; |lru|write_idx[29]                                                         ; |lru|write_idx[29]                                                         ; padio            ;
+; |lru|write_idx[30]                                                         ; |lru|write_idx[30]                                                         ; padio            ;
+; |lru|write_idx[31]                                                         ; |lru|write_idx[31]                                                         ; padio            ;
+; |lru|read_idx[31]                                                          ; |lru|read_idx[31]~corein                                                   ; combout          ;
+; |lru|read_idx[28]                                                          ; |lru|read_idx[28]~corein                                                   ; combout          ;
+; |lru|read_idx[29]                                                          ; |lru|read_idx[29]~corein                                                   ; combout          ;
+; |lru|read_idx[26]                                                          ; |lru|read_idx[26]~corein                                                   ; combout          ;
+; |lru|read_idx[27]                                                          ; |lru|read_idx[27]~corein                                                   ; combout          ;
+; |lru|read_idx[24]                                                          ; |lru|read_idx[24]~corein                                                   ; combout          ;
+; |lru|read_idx[25]                                                          ; |lru|read_idx[25]~corein                                                   ; combout          ;
+; |lru|read_idx[22]                                                          ; |lru|read_idx[22]~corein                                                   ; combout          ;
+; |lru|read_idx[23]                                                          ; |lru|read_idx[23]~corein                                                   ; combout          ;
+; |lru|read_idx[20]                                                          ; |lru|read_idx[20]~corein                                                   ; combout          ;
+; |lru|read_idx[21]                                                          ; |lru|read_idx[21]~corein                                                   ; combout          ;
+; |lru|read_idx[18]                                                          ; |lru|read_idx[18]~corein                                                   ; combout          ;
+; |lru|read_idx[19]                                                          ; |lru|read_idx[19]~corein                                                   ; combout          ;
+; |lru|read_idx[16]                                                          ; |lru|read_idx[16]~corein                                                   ; combout          ;
+; |lru|read_idx[17]                                                          ; |lru|read_idx[17]~corein                                                   ; combout          ;
+; |lru|read_idx[14]                                                          ; |lru|read_idx[14]~corein                                                   ; combout          ;
+; |lru|read_idx[15]                                                          ; |lru|read_idx[15]~corein                                                   ; combout          ;
+; |lru|read_idx[12]                                                          ; |lru|read_idx[12]~corein                                                   ; combout          ;
+; |lru|read_idx[13]                                                          ; |lru|read_idx[13]~corein                                                   ; combout          ;
+; |lru|read_idx[11]                                                          ; |lru|read_idx[11]~corein                                                   ; combout          ;
++----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Mar 06 14:16:05 2014
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off table -c table
+Info: Using vector source file "C:/Users/geo4/Documents/ECE 559/table/lru_test.vwf"
+Info: Inverted registers were found during simulation
+    Info: Register: |lru|lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[0]
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      37.79 %
+Info: Number of transitions in simulation is 557
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 152 megabytes
+    Info: Processing ended: Thu Mar 06 14:16:05 2014
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

@@ -1,0 +1,6 @@
+
+State Machine - |lru|curr_state
+Name curr_state.valid curr_state.search curr_state.ready 
+curr_state.ready 0 0 0 
+curr_state.search 0 1 1 
+curr_state.valid 1 0 1 

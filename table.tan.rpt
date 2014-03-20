@@ -1,0 +1,656 @@
+Classic Timing Analyzer report for table
+Thu Mar 06 14:27:54 2014
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                                                                     ;
++------------------------------+-------+---------------+----------------------------------+---------------------------------------------------------------------+----------------------------------------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                                                ; To                                                                   ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+---------------------------------------------------------------------+----------------------------------------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 5.895 ns                         ; wr_en                                                               ; nBitRegister:flag_reg|\G0:16:dFFs                                    ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 7.638 ns                         ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[0] ; write_idx[0]                                                         ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -3.933 ns                        ; wr_en                                                               ; nBitRegister:flag_reg|\G0:29:dFFs                                    ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 208.99 MHz ( period = 4.785 ns ) ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                                                     ;                                                                      ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+---------------------------------------------------------------------+----------------------------------------------------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C5F256C6        ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                                                                                                      ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------------------------------------------+----------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                                                 ; To                                                                   ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------------------------------------------+----------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 208.99 MHz ( period = 4.785 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25] ; clk        ; clk      ; None                        ; None                      ; 4.557 ns                ;
+; N/A                                     ; 208.99 MHz ( period = 4.785 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; clk        ; clk      ; None                        ; None                      ; 4.557 ns                ;
+; N/A                                     ; 208.99 MHz ( period = 4.785 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; clk        ; clk      ; None                        ; None                      ; 4.557 ns                ;
+; N/A                                     ; 208.99 MHz ( period = 4.785 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; clk        ; clk      ; None                        ; None                      ; 4.557 ns                ;
+; N/A                                     ; 210.13 MHz ( period = 4.759 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; clk        ; clk      ; None                        ; None                      ; 4.530 ns                ;
+; N/A                                     ; 210.13 MHz ( period = 4.759 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; clk        ; clk      ; None                        ; None                      ; 4.530 ns                ;
+; N/A                                     ; 210.13 MHz ( period = 4.759 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[9]  ; clk        ; clk      ; None                        ; None                      ; 4.530 ns                ;
+; N/A                                     ; 210.13 MHz ( period = 4.759 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[8]  ; clk        ; clk      ; None                        ; None                      ; 4.530 ns                ;
+; N/A                                     ; 210.13 MHz ( period = 4.759 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[10] ; clk        ; clk      ; None                        ; None                      ; 4.530 ns                ;
+; N/A                                     ; 213.68 MHz ( period = 4.680 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; clk        ; clk      ; None                        ; None                      ; 4.463 ns                ;
+; N/A                                     ; 213.68 MHz ( period = 4.680 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[22] ; clk        ; clk      ; None                        ; None                      ; 4.463 ns                ;
+; N/A                                     ; 213.68 MHz ( period = 4.680 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[21] ; clk        ; clk      ; None                        ; None                      ; 4.463 ns                ;
+; N/A                                     ; 213.68 MHz ( period = 4.680 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[20] ; clk        ; clk      ; None                        ; None                      ; 4.463 ns                ;
+; N/A                                     ; 214.45 MHz ( period = 4.663 ns )                    ; nBitRegister:flag_reg|\G0:7:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25] ; clk        ; clk      ; None                        ; None                      ; 4.450 ns                ;
+; N/A                                     ; 214.45 MHz ( period = 4.663 ns )                    ; nBitRegister:flag_reg|\G0:7:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; clk        ; clk      ; None                        ; None                      ; 4.450 ns                ;
+; N/A                                     ; 214.45 MHz ( period = 4.663 ns )                    ; nBitRegister:flag_reg|\G0:7:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; clk        ; clk      ; None                        ; None                      ; 4.450 ns                ;
+; N/A                                     ; 214.45 MHz ( period = 4.663 ns )                    ; nBitRegister:flag_reg|\G0:7:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; clk        ; clk      ; None                        ; None                      ; 4.450 ns                ;
+; N/A                                     ; 214.96 MHz ( period = 4.652 ns )                    ; nBitRegister:flag_reg|\G0:6:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25] ; clk        ; clk      ; None                        ; None                      ; 4.439 ns                ;
+; N/A                                     ; 214.96 MHz ( period = 4.652 ns )                    ; nBitRegister:flag_reg|\G0:6:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; clk        ; clk      ; None                        ; None                      ; 4.439 ns                ;
+; N/A                                     ; 214.96 MHz ( period = 4.652 ns )                    ; nBitRegister:flag_reg|\G0:6:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; clk        ; clk      ; None                        ; None                      ; 4.439 ns                ;
+; N/A                                     ; 214.96 MHz ( period = 4.652 ns )                    ; nBitRegister:flag_reg|\G0:6:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; clk        ; clk      ; None                        ; None                      ; 4.439 ns                ;
+; N/A                                     ; 215.66 MHz ( period = 4.637 ns )                    ; nBitRegister:flag_reg|\G0:7:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; clk        ; clk      ; None                        ; None                      ; 4.423 ns                ;
+; N/A                                     ; 215.66 MHz ( period = 4.637 ns )                    ; nBitRegister:flag_reg|\G0:7:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; clk        ; clk      ; None                        ; None                      ; 4.423 ns                ;
+; N/A                                     ; 215.66 MHz ( period = 4.637 ns )                    ; nBitRegister:flag_reg|\G0:7:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[9]  ; clk        ; clk      ; None                        ; None                      ; 4.423 ns                ;
+; N/A                                     ; 215.66 MHz ( period = 4.637 ns )                    ; nBitRegister:flag_reg|\G0:7:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[8]  ; clk        ; clk      ; None                        ; None                      ; 4.423 ns                ;
+; N/A                                     ; 215.66 MHz ( period = 4.637 ns )                    ; nBitRegister:flag_reg|\G0:7:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[10] ; clk        ; clk      ; None                        ; None                      ; 4.423 ns                ;
+; N/A                                     ; 216.17 MHz ( period = 4.626 ns )                    ; nBitRegister:flag_reg|\G0:6:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; clk        ; clk      ; None                        ; None                      ; 4.412 ns                ;
+; N/A                                     ; 216.17 MHz ( period = 4.626 ns )                    ; nBitRegister:flag_reg|\G0:6:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; clk        ; clk      ; None                        ; None                      ; 4.412 ns                ;
+; N/A                                     ; 216.17 MHz ( period = 4.626 ns )                    ; nBitRegister:flag_reg|\G0:6:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[9]  ; clk        ; clk      ; None                        ; None                      ; 4.412 ns                ;
+; N/A                                     ; 216.17 MHz ( period = 4.626 ns )                    ; nBitRegister:flag_reg|\G0:6:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[8]  ; clk        ; clk      ; None                        ; None                      ; 4.412 ns                ;
+; N/A                                     ; 216.17 MHz ( period = 4.626 ns )                    ; nBitRegister:flag_reg|\G0:6:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[10] ; clk        ; clk      ; None                        ; None                      ; 4.412 ns                ;
+; N/A                                     ; 217.34 MHz ( period = 4.601 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25] ; clk        ; clk      ; None                        ; None                      ; 4.376 ns                ;
+; N/A                                     ; 217.34 MHz ( period = 4.601 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; clk        ; clk      ; None                        ; None                      ; 4.376 ns                ;
+; N/A                                     ; 217.34 MHz ( period = 4.601 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; clk        ; clk      ; None                        ; None                      ; 4.376 ns                ;
+; N/A                                     ; 217.34 MHz ( period = 4.601 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; clk        ; clk      ; None                        ; None                      ; 4.376 ns                ;
+; N/A                                     ; 217.49 MHz ( period = 4.598 ns )                    ; nBitRegister:flag_reg|\G0:2:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25] ; clk        ; clk      ; None                        ; None                      ; 4.367 ns                ;
+; N/A                                     ; 217.49 MHz ( period = 4.598 ns )                    ; nBitRegister:flag_reg|\G0:2:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; clk        ; clk      ; None                        ; None                      ; 4.367 ns                ;
+; N/A                                     ; 217.49 MHz ( period = 4.598 ns )                    ; nBitRegister:flag_reg|\G0:2:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; clk        ; clk      ; None                        ; None                      ; 4.367 ns                ;
+; N/A                                     ; 217.49 MHz ( period = 4.598 ns )                    ; nBitRegister:flag_reg|\G0:2:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; clk        ; clk      ; None                        ; None                      ; 4.367 ns                ;
+; N/A                                     ; 218.58 MHz ( period = 4.575 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; clk        ; clk      ; None                        ; None                      ; 4.349 ns                ;
+; N/A                                     ; 218.58 MHz ( period = 4.575 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; clk        ; clk      ; None                        ; None                      ; 4.349 ns                ;
+; N/A                                     ; 218.58 MHz ( period = 4.575 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[9]  ; clk        ; clk      ; None                        ; None                      ; 4.349 ns                ;
+; N/A                                     ; 218.58 MHz ( period = 4.575 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[8]  ; clk        ; clk      ; None                        ; None                      ; 4.349 ns                ;
+; N/A                                     ; 218.58 MHz ( period = 4.575 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[10] ; clk        ; clk      ; None                        ; None                      ; 4.349 ns                ;
+; N/A                                     ; 218.72 MHz ( period = 4.572 ns )                    ; nBitRegister:flag_reg|\G0:2:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; clk        ; clk      ; None                        ; None                      ; 4.340 ns                ;
+; N/A                                     ; 218.72 MHz ( period = 4.572 ns )                    ; nBitRegister:flag_reg|\G0:2:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; clk        ; clk      ; None                        ; None                      ; 4.340 ns                ;
+; N/A                                     ; 218.72 MHz ( period = 4.572 ns )                    ; nBitRegister:flag_reg|\G0:2:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[9]  ; clk        ; clk      ; None                        ; None                      ; 4.340 ns                ;
+; N/A                                     ; 218.72 MHz ( period = 4.572 ns )                    ; nBitRegister:flag_reg|\G0:2:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[8]  ; clk        ; clk      ; None                        ; None                      ; 4.340 ns                ;
+; N/A                                     ; 218.72 MHz ( period = 4.572 ns )                    ; nBitRegister:flag_reg|\G0:2:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[10] ; clk        ; clk      ; None                        ; None                      ; 4.340 ns                ;
+; N/A                                     ; 218.96 MHz ( period = 4.567 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[3]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25] ; clk        ; clk      ; None                        ; None                      ; 4.336 ns                ;
+; N/A                                     ; 218.96 MHz ( period = 4.567 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[3]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; clk        ; clk      ; None                        ; None                      ; 4.336 ns                ;
+; N/A                                     ; 218.96 MHz ( period = 4.567 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[3]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; clk        ; clk      ; None                        ; None                      ; 4.336 ns                ;
+; N/A                                     ; 218.96 MHz ( period = 4.567 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[3]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; clk        ; clk      ; None                        ; None                      ; 4.336 ns                ;
+; N/A                                     ; 219.06 MHz ( period = 4.565 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25] ; clk        ; clk      ; None                        ; None                      ; 4.339 ns                ;
+; N/A                                     ; 219.06 MHz ( period = 4.565 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; clk        ; clk      ; None                        ; None                      ; 4.339 ns                ;
+; N/A                                     ; 219.06 MHz ( period = 4.565 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; clk        ; clk      ; None                        ; None                      ; 4.339 ns                ;
+; N/A                                     ; 219.06 MHz ( period = 4.565 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; clk        ; clk      ; None                        ; None                      ; 4.339 ns                ;
+; N/A                                     ; 219.30 MHz ( period = 4.560 ns )                    ; nBitRegister:flag_reg|\G0:5:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25] ; clk        ; clk      ; None                        ; None                      ; 4.332 ns                ;
+; N/A                                     ; 219.30 MHz ( period = 4.560 ns )                    ; nBitRegister:flag_reg|\G0:5:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; clk        ; clk      ; None                        ; None                      ; 4.332 ns                ;
+; N/A                                     ; 219.30 MHz ( period = 4.560 ns )                    ; nBitRegister:flag_reg|\G0:5:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; clk        ; clk      ; None                        ; None                      ; 4.332 ns                ;
+; N/A                                     ; 219.30 MHz ( period = 4.560 ns )                    ; nBitRegister:flag_reg|\G0:5:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; clk        ; clk      ; None                        ; None                      ; 4.332 ns                ;
+; N/A                                     ; 219.39 MHz ( period = 4.558 ns )                    ; nBitRegister:flag_reg|\G0:7:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; clk        ; clk      ; None                        ; None                      ; 4.356 ns                ;
+; N/A                                     ; 219.39 MHz ( period = 4.558 ns )                    ; nBitRegister:flag_reg|\G0:7:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[22] ; clk        ; clk      ; None                        ; None                      ; 4.356 ns                ;
+; N/A                                     ; 219.39 MHz ( period = 4.558 ns )                    ; nBitRegister:flag_reg|\G0:7:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[21] ; clk        ; clk      ; None                        ; None                      ; 4.356 ns                ;
+; N/A                                     ; 219.39 MHz ( period = 4.558 ns )                    ; nBitRegister:flag_reg|\G0:7:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[20] ; clk        ; clk      ; None                        ; None                      ; 4.356 ns                ;
+; N/A                                     ; 219.93 MHz ( period = 4.547 ns )                    ; nBitRegister:flag_reg|\G0:6:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; clk        ; clk      ; None                        ; None                      ; 4.345 ns                ;
+; N/A                                     ; 219.93 MHz ( period = 4.547 ns )                    ; nBitRegister:flag_reg|\G0:6:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[22] ; clk        ; clk      ; None                        ; None                      ; 4.345 ns                ;
+; N/A                                     ; 219.93 MHz ( period = 4.547 ns )                    ; nBitRegister:flag_reg|\G0:6:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[21] ; clk        ; clk      ; None                        ; None                      ; 4.345 ns                ;
+; N/A                                     ; 219.93 MHz ( period = 4.547 ns )                    ; nBitRegister:flag_reg|\G0:6:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[20] ; clk        ; clk      ; None                        ; None                      ; 4.345 ns                ;
+; N/A                                     ; 220.12 MHz ( period = 4.543 ns )                    ; nBitRegister:flag_reg|\G0:9:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25] ; clk        ; clk      ; None                        ; None                      ; 4.330 ns                ;
+; N/A                                     ; 220.12 MHz ( period = 4.543 ns )                    ; nBitRegister:flag_reg|\G0:9:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; clk        ; clk      ; None                        ; None                      ; 4.330 ns                ;
+; N/A                                     ; 220.12 MHz ( period = 4.543 ns )                    ; nBitRegister:flag_reg|\G0:9:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; clk        ; clk      ; None                        ; None                      ; 4.330 ns                ;
+; N/A                                     ; 220.12 MHz ( period = 4.543 ns )                    ; nBitRegister:flag_reg|\G0:9:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; clk        ; clk      ; None                        ; None                      ; 4.330 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[3]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; clk        ; clk      ; None                        ; None                      ; 4.309 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[3]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; clk        ; clk      ; None                        ; None                      ; 4.309 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; nBitRegister:flag_reg|\G0:23:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25] ; clk        ; clk      ; None                        ; None                      ; 4.316 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[3]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[9]  ; clk        ; clk      ; None                        ; None                      ; 4.309 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[3]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[8]  ; clk        ; clk      ; None                        ; None                      ; 4.309 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; nBitRegister:flag_reg|\G0:23:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; clk        ; clk      ; None                        ; None                      ; 4.316 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; nBitRegister:flag_reg|\G0:23:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; clk        ; clk      ; None                        ; None                      ; 4.316 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; nBitRegister:flag_reg|\G0:23:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; clk        ; clk      ; None                        ; None                      ; 4.316 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[3]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[10] ; clk        ; clk      ; None                        ; None                      ; 4.309 ns                ;
+; N/A                                     ; 220.31 MHz ( period = 4.539 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; clk        ; clk      ; None                        ; None                      ; 4.312 ns                ;
+; N/A                                     ; 220.31 MHz ( period = 4.539 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; clk        ; clk      ; None                        ; None                      ; 4.312 ns                ;
+; N/A                                     ; 220.31 MHz ( period = 4.539 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[9]  ; clk        ; clk      ; None                        ; None                      ; 4.312 ns                ;
+; N/A                                     ; 220.31 MHz ( period = 4.539 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[8]  ; clk        ; clk      ; None                        ; None                      ; 4.312 ns                ;
+; N/A                                     ; 220.31 MHz ( period = 4.539 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[10] ; clk        ; clk      ; None                        ; None                      ; 4.312 ns                ;
+; N/A                                     ; 220.56 MHz ( period = 4.534 ns )                    ; nBitRegister:flag_reg|\G0:5:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; clk        ; clk      ; None                        ; None                      ; 4.305 ns                ;
+; N/A                                     ; 220.56 MHz ( period = 4.534 ns )                    ; nBitRegister:flag_reg|\G0:5:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; clk        ; clk      ; None                        ; None                      ; 4.305 ns                ;
+; N/A                                     ; 220.56 MHz ( period = 4.534 ns )                    ; nBitRegister:flag_reg|\G0:5:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[9]  ; clk        ; clk      ; None                        ; None                      ; 4.305 ns                ;
+; N/A                                     ; 220.56 MHz ( period = 4.534 ns )                    ; nBitRegister:flag_reg|\G0:5:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[8]  ; clk        ; clk      ; None                        ; None                      ; 4.305 ns                ;
+; N/A                                     ; 220.56 MHz ( period = 4.534 ns )                    ; nBitRegister:flag_reg|\G0:5:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[10] ; clk        ; clk      ; None                        ; None                      ; 4.305 ns                ;
+; N/A                                     ; 221.39 MHz ( period = 4.517 ns )                    ; nBitRegister:flag_reg|\G0:9:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; clk        ; clk      ; None                        ; None                      ; 4.303 ns                ;
+; N/A                                     ; 221.39 MHz ( period = 4.517 ns )                    ; nBitRegister:flag_reg|\G0:9:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; clk        ; clk      ; None                        ; None                      ; 4.303 ns                ;
+; N/A                                     ; 221.39 MHz ( period = 4.517 ns )                    ; nBitRegister:flag_reg|\G0:9:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[9]  ; clk        ; clk      ; None                        ; None                      ; 4.303 ns                ;
+; N/A                                     ; 221.39 MHz ( period = 4.517 ns )                    ; nBitRegister:flag_reg|\G0:9:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[8]  ; clk        ; clk      ; None                        ; None                      ; 4.303 ns                ;
+; N/A                                     ; 221.39 MHz ( period = 4.517 ns )                    ; nBitRegister:flag_reg|\G0:9:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[10] ; clk        ; clk      ; None                        ; None                      ; 4.303 ns                ;
+; N/A                                     ; 221.48 MHz ( period = 4.515 ns )                    ; nBitRegister:flag_reg|\G0:23:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; clk        ; clk      ; None                        ; None                      ; 4.289 ns                ;
+; N/A                                     ; 221.48 MHz ( period = 4.515 ns )                    ; nBitRegister:flag_reg|\G0:23:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; clk        ; clk      ; None                        ; None                      ; 4.289 ns                ;
+; N/A                                     ; 221.48 MHz ( period = 4.515 ns )                    ; nBitRegister:flag_reg|\G0:23:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[9]  ; clk        ; clk      ; None                        ; None                      ; 4.289 ns                ;
+; N/A                                     ; 221.48 MHz ( period = 4.515 ns )                    ; nBitRegister:flag_reg|\G0:23:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[8]  ; clk        ; clk      ; None                        ; None                      ; 4.289 ns                ;
+; N/A                                     ; 221.48 MHz ( period = 4.515 ns )                    ; nBitRegister:flag_reg|\G0:23:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[10] ; clk        ; clk      ; None                        ; None                      ; 4.289 ns                ;
+; N/A                                     ; 221.53 MHz ( period = 4.514 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25] ; clk        ; clk      ; None                        ; None                      ; 4.301 ns                ;
+; N/A                                     ; 221.53 MHz ( period = 4.514 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; clk        ; clk      ; None                        ; None                      ; 4.301 ns                ;
+; N/A                                     ; 221.53 MHz ( period = 4.514 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; clk        ; clk      ; None                        ; None                      ; 4.301 ns                ;
+; N/A                                     ; 221.53 MHz ( period = 4.514 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; clk        ; clk      ; None                        ; None                      ; 4.301 ns                ;
+; N/A                                     ; 222.42 MHz ( period = 4.496 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; clk        ; clk      ; None                        ; None                      ; 4.282 ns                ;
+; N/A                                     ; 222.42 MHz ( period = 4.496 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[22] ; clk        ; clk      ; None                        ; None                      ; 4.282 ns                ;
+; N/A                                     ; 222.42 MHz ( period = 4.496 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[21] ; clk        ; clk      ; None                        ; None                      ; 4.282 ns                ;
+; N/A                                     ; 222.42 MHz ( period = 4.496 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[20] ; clk        ; clk      ; None                        ; None                      ; 4.282 ns                ;
+; N/A                                     ; 222.57 MHz ( period = 4.493 ns )                    ; nBitRegister:flag_reg|\G0:2:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; clk        ; clk      ; None                        ; None                      ; 4.273 ns                ;
+; N/A                                     ; 222.57 MHz ( period = 4.493 ns )                    ; nBitRegister:flag_reg|\G0:2:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[22] ; clk        ; clk      ; None                        ; None                      ; 4.273 ns                ;
+; N/A                                     ; 222.57 MHz ( period = 4.493 ns )                    ; nBitRegister:flag_reg|\G0:2:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[21] ; clk        ; clk      ; None                        ; None                      ; 4.273 ns                ;
+; N/A                                     ; 222.57 MHz ( period = 4.493 ns )                    ; nBitRegister:flag_reg|\G0:2:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[20] ; clk        ; clk      ; None                        ; None                      ; 4.273 ns                ;
+; N/A                                     ; 222.82 MHz ( period = 4.488 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; clk        ; clk      ; None                        ; None                      ; 4.274 ns                ;
+; N/A                                     ; 222.82 MHz ( period = 4.488 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; clk        ; clk      ; None                        ; None                      ; 4.274 ns                ;
+; N/A                                     ; 222.82 MHz ( period = 4.488 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[9]  ; clk        ; clk      ; None                        ; None                      ; 4.274 ns                ;
+; N/A                                     ; 222.82 MHz ( period = 4.488 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[8]  ; clk        ; clk      ; None                        ; None                      ; 4.274 ns                ;
+; N/A                                     ; 222.82 MHz ( period = 4.488 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[10] ; clk        ; clk      ; None                        ; None                      ; 4.274 ns                ;
+; N/A                                     ; 224.11 MHz ( period = 4.462 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[3]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; clk        ; clk      ; None                        ; None                      ; 4.242 ns                ;
+; N/A                                     ; 224.11 MHz ( period = 4.462 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[3]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[22] ; clk        ; clk      ; None                        ; None                      ; 4.242 ns                ;
+; N/A                                     ; 224.11 MHz ( period = 4.462 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[3]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[21] ; clk        ; clk      ; None                        ; None                      ; 4.242 ns                ;
+; N/A                                     ; 224.11 MHz ( period = 4.462 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[3]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[20] ; clk        ; clk      ; None                        ; None                      ; 4.242 ns                ;
+; N/A                                     ; 224.22 MHz ( period = 4.460 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; clk        ; clk      ; None                        ; None                      ; 4.245 ns                ;
+; N/A                                     ; 224.22 MHz ( period = 4.460 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[22] ; clk        ; clk      ; None                        ; None                      ; 4.245 ns                ;
+; N/A                                     ; 224.22 MHz ( period = 4.460 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[21] ; clk        ; clk      ; None                        ; None                      ; 4.245 ns                ;
+; N/A                                     ; 224.22 MHz ( period = 4.460 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[20] ; clk        ; clk      ; None                        ; None                      ; 4.245 ns                ;
+; N/A                                     ; 224.47 MHz ( period = 4.455 ns )                    ; nBitRegister:flag_reg|\G0:5:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; clk        ; clk      ; None                        ; None                      ; 4.238 ns                ;
+; N/A                                     ; 224.47 MHz ( period = 4.455 ns )                    ; nBitRegister:flag_reg|\G0:5:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[22] ; clk        ; clk      ; None                        ; None                      ; 4.238 ns                ;
+; N/A                                     ; 224.47 MHz ( period = 4.455 ns )                    ; nBitRegister:flag_reg|\G0:5:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[21] ; clk        ; clk      ; None                        ; None                      ; 4.238 ns                ;
+; N/A                                     ; 224.47 MHz ( period = 4.455 ns )                    ; nBitRegister:flag_reg|\G0:5:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[20] ; clk        ; clk      ; None                        ; None                      ; 4.238 ns                ;
+; N/A                                     ; 224.82 MHz ( period = 4.448 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[19] ; clk        ; clk      ; None                        ; None                      ; 4.232 ns                ;
+; N/A                                     ; 224.82 MHz ( period = 4.448 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[18] ; clk        ; clk      ; None                        ; None                      ; 4.232 ns                ;
+; N/A                                     ; 224.82 MHz ( period = 4.448 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[17] ; clk        ; clk      ; None                        ; None                      ; 4.232 ns                ;
+; N/A                                     ; 224.82 MHz ( period = 4.448 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[16] ; clk        ; clk      ; None                        ; None                      ; 4.232 ns                ;
+; N/A                                     ; 224.82 MHz ( period = 4.448 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14] ; clk        ; clk      ; None                        ; None                      ; 4.232 ns                ;
+; N/A                                     ; 224.82 MHz ( period = 4.448 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[15] ; clk        ; clk      ; None                        ; None                      ; 4.232 ns                ;
+; N/A                                     ; 224.97 MHz ( period = 4.445 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; clk        ; clk      ; None                        ; None                      ; 4.231 ns                ;
+; N/A                                     ; 224.97 MHz ( period = 4.445 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[27] ; clk        ; clk      ; None                        ; None                      ; 4.231 ns                ;
+; N/A                                     ; 224.97 MHz ( period = 4.445 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[26] ; clk        ; clk      ; None                        ; None                      ; 4.231 ns                ;
+; N/A                                     ; 225.12 MHz ( period = 4.442 ns )                    ; nBitRegister:flag_reg|\G0:21:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25] ; clk        ; clk      ; None                        ; None                      ; 4.217 ns                ;
+; N/A                                     ; 225.12 MHz ( period = 4.442 ns )                    ; nBitRegister:flag_reg|\G0:21:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; clk        ; clk      ; None                        ; None                      ; 4.217 ns                ;
+; N/A                                     ; 225.12 MHz ( period = 4.442 ns )                    ; nBitRegister:flag_reg|\G0:21:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; clk        ; clk      ; None                        ; None                      ; 4.217 ns                ;
+; N/A                                     ; 225.12 MHz ( period = 4.442 ns )                    ; nBitRegister:flag_reg|\G0:21:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; clk        ; clk      ; None                        ; None                      ; 4.217 ns                ;
+; N/A                                     ; 225.33 MHz ( period = 4.438 ns )                    ; nBitRegister:flag_reg|\G0:9:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; clk        ; clk      ; None                        ; None                      ; 4.236 ns                ;
+; N/A                                     ; 225.33 MHz ( period = 4.438 ns )                    ; nBitRegister:flag_reg|\G0:9:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[22] ; clk        ; clk      ; None                        ; None                      ; 4.236 ns                ;
+; N/A                                     ; 225.33 MHz ( period = 4.438 ns )                    ; nBitRegister:flag_reg|\G0:9:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[21] ; clk        ; clk      ; None                        ; None                      ; 4.236 ns                ;
+; N/A                                     ; 225.33 MHz ( period = 4.438 ns )                    ; nBitRegister:flag_reg|\G0:9:dFFs                                     ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[20] ; clk        ; clk      ; None                        ; None                      ; 4.236 ns                ;
+; N/A                                     ; 225.38 MHz ( period = 4.437 ns )                    ; nBitRegister:flag_reg|\G0:20:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25] ; clk        ; clk      ; None                        ; None                      ; 4.212 ns                ;
+; N/A                                     ; 225.38 MHz ( period = 4.437 ns )                    ; nBitRegister:flag_reg|\G0:20:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; clk        ; clk      ; None                        ; None                      ; 4.212 ns                ;
+; N/A                                     ; 225.38 MHz ( period = 4.437 ns )                    ; nBitRegister:flag_reg|\G0:20:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; clk        ; clk      ; None                        ; None                      ; 4.212 ns                ;
+; N/A                                     ; 225.38 MHz ( period = 4.437 ns )                    ; nBitRegister:flag_reg|\G0:20:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; clk        ; clk      ; None                        ; None                      ; 4.212 ns                ;
+; N/A                                     ; 225.43 MHz ( period = 4.436 ns )                    ; nBitRegister:flag_reg|\G0:23:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; clk        ; clk      ; None                        ; None                      ; 4.222 ns                ;
+; N/A                                     ; 225.43 MHz ( period = 4.436 ns )                    ; nBitRegister:flag_reg|\G0:23:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[22] ; clk        ; clk      ; None                        ; None                      ; 4.222 ns                ;
+; N/A                                     ; 225.43 MHz ( period = 4.436 ns )                    ; nBitRegister:flag_reg|\G0:23:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[21] ; clk        ; clk      ; None                        ; None                      ; 4.222 ns                ;
+; N/A                                     ; 225.43 MHz ( period = 4.436 ns )                    ; nBitRegister:flag_reg|\G0:23:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[20] ; clk        ; clk      ; None                        ; None                      ; 4.222 ns                ;
+; N/A                                     ; 225.63 MHz ( period = 4.432 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[30] ; clk        ; clk      ; None                        ; None                      ; 4.221 ns                ;
+; N/A                                     ; 225.63 MHz ( period = 4.432 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[3]  ; clk        ; clk      ; None                        ; None                      ; 4.221 ns                ;
+; N/A                                     ; 225.78 MHz ( period = 4.429 ns )                    ; nBitRegister:flag_reg|\G0:22:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25] ; clk        ; clk      ; None                        ; None                      ; 4.204 ns                ;
+; N/A                                     ; 225.78 MHz ( period = 4.429 ns )                    ; nBitRegister:flag_reg|\G0:22:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; clk        ; clk      ; None                        ; None                      ; 4.204 ns                ;
+; N/A                                     ; 225.78 MHz ( period = 4.429 ns )                    ; nBitRegister:flag_reg|\G0:22:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; clk        ; clk      ; None                        ; None                      ; 4.204 ns                ;
+; N/A                                     ; 225.78 MHz ( period = 4.429 ns )                    ; nBitRegister:flag_reg|\G0:22:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; clk        ; clk      ; None                        ; None                      ; 4.204 ns                ;
+; N/A                                     ; 225.94 MHz ( period = 4.426 ns )                    ; nBitRegister:flag_reg|\G0:24:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25] ; clk        ; clk      ; None                        ; None                      ; 4.212 ns                ;
+; N/A                                     ; 225.94 MHz ( period = 4.426 ns )                    ; nBitRegister:flag_reg|\G0:24:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; clk        ; clk      ; None                        ; None                      ; 4.212 ns                ;
+; N/A                                     ; 225.94 MHz ( period = 4.426 ns )                    ; nBitRegister:flag_reg|\G0:24:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; clk        ; clk      ; None                        ; None                      ; 4.212 ns                ;
+; N/A                                     ; 225.94 MHz ( period = 4.426 ns )                    ; nBitRegister:flag_reg|\G0:24:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; clk        ; clk      ; None                        ; None                      ; 4.212 ns                ;
+; N/A                                     ; 226.45 MHz ( period = 4.416 ns )                    ; nBitRegister:flag_reg|\G0:21:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; clk        ; clk      ; None                        ; None                      ; 4.190 ns                ;
+; N/A                                     ; 226.45 MHz ( period = 4.416 ns )                    ; nBitRegister:flag_reg|\G0:21:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; clk        ; clk      ; None                        ; None                      ; 4.190 ns                ;
+; N/A                                     ; 226.45 MHz ( period = 4.416 ns )                    ; nBitRegister:flag_reg|\G0:21:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[9]  ; clk        ; clk      ; None                        ; None                      ; 4.190 ns                ;
+; N/A                                     ; 226.45 MHz ( period = 4.416 ns )                    ; nBitRegister:flag_reg|\G0:21:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[8]  ; clk        ; clk      ; None                        ; None                      ; 4.190 ns                ;
+; N/A                                     ; 226.45 MHz ( period = 4.416 ns )                    ; nBitRegister:flag_reg|\G0:21:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[10] ; clk        ; clk      ; None                        ; None                      ; 4.190 ns                ;
+; N/A                                     ; 226.65 MHz ( period = 4.412 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[19] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25] ; clk        ; clk      ; None                        ; None                      ; 4.186 ns                ;
+; N/A                                     ; 226.65 MHz ( period = 4.412 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[19] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; clk        ; clk      ; None                        ; None                      ; 4.186 ns                ;
+; N/A                                     ; 226.65 MHz ( period = 4.412 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[19] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; clk        ; clk      ; None                        ; None                      ; 4.186 ns                ;
+; N/A                                     ; 226.65 MHz ( period = 4.412 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[19] ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; clk        ; clk      ; None                        ; None                      ; 4.186 ns                ;
+; N/A                                     ; 226.71 MHz ( period = 4.411 ns )                    ; nBitRegister:flag_reg|\G0:20:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; clk        ; clk      ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 226.71 MHz ( period = 4.411 ns )                    ; nBitRegister:flag_reg|\G0:20:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; clk        ; clk      ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 226.71 MHz ( period = 4.411 ns )                    ; nBitRegister:flag_reg|\G0:20:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[9]  ; clk        ; clk      ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 226.71 MHz ( period = 4.411 ns )                    ; nBitRegister:flag_reg|\G0:20:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[8]  ; clk        ; clk      ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 226.71 MHz ( period = 4.411 ns )                    ; nBitRegister:flag_reg|\G0:20:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[10] ; clk        ; clk      ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 226.81 MHz ( period = 4.409 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; clk        ; clk      ; None                        ; None                      ; 4.207 ns                ;
+; N/A                                     ; 226.81 MHz ( period = 4.409 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[22] ; clk        ; clk      ; None                        ; None                      ; 4.207 ns                ;
+; N/A                                     ; 226.81 MHz ( period = 4.409 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[21] ; clk        ; clk      ; None                        ; None                      ; 4.207 ns                ;
+; N/A                                     ; 226.81 MHz ( period = 4.409 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[20] ; clk        ; clk      ; None                        ; None                      ; 4.207 ns                ;
+; N/A                                     ; 227.12 MHz ( period = 4.403 ns )                    ; nBitRegister:flag_reg|\G0:22:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; clk        ; clk      ; None                        ; None                      ; 4.177 ns                ;
+; N/A                                     ; 227.12 MHz ( period = 4.403 ns )                    ; nBitRegister:flag_reg|\G0:22:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; clk        ; clk      ; None                        ; None                      ; 4.177 ns                ;
+; N/A                                     ; 227.12 MHz ( period = 4.403 ns )                    ; nBitRegister:flag_reg|\G0:22:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[9]  ; clk        ; clk      ; None                        ; None                      ; 4.177 ns                ;
+; N/A                                     ; 227.12 MHz ( period = 4.403 ns )                    ; nBitRegister:flag_reg|\G0:22:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[8]  ; clk        ; clk      ; None                        ; None                      ; 4.177 ns                ;
+; N/A                                     ; 227.12 MHz ( period = 4.403 ns )                    ; nBitRegister:flag_reg|\G0:22:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[10] ; clk        ; clk      ; None                        ; None                      ; 4.177 ns                ;
+; N/A                                     ; 227.27 MHz ( period = 4.400 ns )                    ; nBitRegister:flag_reg|\G0:24:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; clk        ; clk      ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 227.27 MHz ( period = 4.400 ns )                    ; nBitRegister:flag_reg|\G0:24:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; clk        ; clk      ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 227.27 MHz ( period = 4.400 ns )                    ; nBitRegister:flag_reg|\G0:24:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[9]  ; clk        ; clk      ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 227.27 MHz ( period = 4.400 ns )                    ; nBitRegister:flag_reg|\G0:24:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[8]  ; clk        ; clk      ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 227.27 MHz ( period = 4.400 ns )                    ; nBitRegister:flag_reg|\G0:24:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[10] ; clk        ; clk      ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 227.58 MHz ( period = 4.394 ns )                    ; nBitRegister:flag_reg|\G0:14:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25] ; clk        ; clk      ; None                        ; None                      ; 4.168 ns                ;
+; N/A                                     ; 227.58 MHz ( period = 4.394 ns )                    ; nBitRegister:flag_reg|\G0:14:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; clk        ; clk      ; None                        ; None                      ; 4.168 ns                ;
+; N/A                                     ; 227.58 MHz ( period = 4.394 ns )                    ; nBitRegister:flag_reg|\G0:14:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; clk        ; clk      ; None                        ; None                      ; 4.168 ns                ;
+; N/A                                     ; 227.58 MHz ( period = 4.394 ns )                    ; nBitRegister:flag_reg|\G0:14:dFFs                                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; clk        ; clk      ; None                        ; None                      ; 4.168 ns                ;
+; N/A                                     ; 227.74 MHz ( period = 4.391 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; clk        ; clk      ; None                        ; None                      ; 4.178 ns                ;
+; N/A                                     ; 227.74 MHz ( period = 4.391 ns )                    ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; clk        ; clk      ; None                        ; None                      ; 4.178 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                                                      ;                                                                      ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------------------------------------------+----------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; tsu                                                                                             ;
++-------+--------------+------------+--------------+-----------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From         ; To                                ; To Clock ;
++-------+--------------+------------+--------------+-----------------------------------+----------+
+; N/A   ; None         ; 5.895 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:16:dFFs ; clk      ;
+; N/A   ; None         ; 5.666 ns   ; en           ; nBitRegister:flag_reg|\G0:16:dFFs ; clk      ;
+; N/A   ; None         ; 5.648 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:19:dFFs ; clk      ;
+; N/A   ; None         ; 5.624 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:17:dFFs ; clk      ;
+; N/A   ; None         ; 5.608 ns   ; read_idx[16] ; nBitRegister:flag_reg|\G0:16:dFFs ; clk      ;
+; N/A   ; None         ; 5.443 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:15:dFFs ; clk      ;
+; N/A   ; None         ; 5.417 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:20:dFFs ; clk      ;
+; N/A   ; None         ; 5.398 ns   ; en           ; nBitRegister:flag_reg|\G0:17:dFFs ; clk      ;
+; N/A   ; None         ; 5.376 ns   ; en           ; nBitRegister:flag_reg|\G0:28:dFFs ; clk      ;
+; N/A   ; None         ; 5.358 ns   ; en           ; nBitRegister:flag_reg|\G0:20:dFFs ; clk      ;
+; N/A   ; None         ; 5.287 ns   ; read_idx[21] ; nBitRegister:flag_reg|\G0:21:dFFs ; clk      ;
+; N/A   ; None         ; 5.277 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:21:dFFs ; clk      ;
+; N/A   ; None         ; 5.267 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:23:dFFs ; clk      ;
+; N/A   ; None         ; 5.254 ns   ; read_idx[28] ; nBitRegister:flag_reg|\G0:28:dFFs ; clk      ;
+; N/A   ; None         ; 5.249 ns   ; read_idx[17] ; nBitRegister:flag_reg|\G0:17:dFFs ; clk      ;
+; N/A   ; None         ; 5.246 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:28:dFFs ; clk      ;
+; N/A   ; None         ; 5.230 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:18:dFFs ; clk      ;
+; N/A   ; None         ; 5.216 ns   ; en           ; nBitRegister:flag_reg|\G0:21:dFFs ; clk      ;
+; N/A   ; None         ; 5.216 ns   ; en           ; nBitRegister:flag_reg|\G0:15:dFFs ; clk      ;
+; N/A   ; None         ; 5.213 ns   ; read_idx[26] ; nBitRegister:flag_reg|\G0:26:dFFs ; clk      ;
+; N/A   ; None         ; 5.164 ns   ; en           ; nBitRegister:flag_reg|\G0:30:dFFs ; clk      ;
+; N/A   ; None         ; 5.089 ns   ; en           ; nBitRegister:flag_reg|\G0:31:dFFs ; clk      ;
+; N/A   ; None         ; 5.078 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:8:dFFs  ; clk      ;
+; N/A   ; None         ; 5.074 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:6:dFFs  ; clk      ;
+; N/A   ; None         ; 5.071 ns   ; read_idx[30] ; nBitRegister:flag_reg|\G0:30:dFFs ; clk      ;
+; N/A   ; None         ; 5.047 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:7:dFFs  ; clk      ;
+; N/A   ; None         ; 5.041 ns   ; read_idx[15] ; nBitRegister:flag_reg|\G0:15:dFFs ; clk      ;
+; N/A   ; None         ; 5.037 ns   ; read_idx[7]  ; nBitRegister:flag_reg|\G0:7:dFFs  ; clk      ;
+; N/A   ; None         ; 5.032 ns   ; read_idx[25] ; nBitRegister:flag_reg|\G0:25:dFFs ; clk      ;
+; N/A   ; None         ; 5.031 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:0:dFFs  ; clk      ;
+; N/A   ; None         ; 4.997 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:10:dFFs ; clk      ;
+; N/A   ; None         ; 4.967 ns   ; read_idx[14] ; nBitRegister:flag_reg|\G0:14:dFFs ; clk      ;
+; N/A   ; None         ; 4.967 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:31:dFFs ; clk      ;
+; N/A   ; None         ; 4.958 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:22:dFFs ; clk      ;
+; N/A   ; None         ; 4.952 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:25:dFFs ; clk      ;
+; N/A   ; None         ; 4.948 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:12:dFFs ; clk      ;
+; N/A   ; None         ; 4.936 ns   ; wr_en        ; curr_state.ready                  ; clk      ;
+; N/A   ; None         ; 4.935 ns   ; read_idx[29] ; nBitRegister:flag_reg|\G0:29:dFFs ; clk      ;
+; N/A   ; None         ; 4.931 ns   ; en           ; nBitRegister:flag_reg|\G0:19:dFFs ; clk      ;
+; N/A   ; None         ; 4.917 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:14:dFFs ; clk      ;
+; N/A   ; None         ; 4.900 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:13:dFFs ; clk      ;
+; N/A   ; None         ; 4.887 ns   ; read_idx[0]  ; nBitRegister:flag_reg|\G0:0:dFFs  ; clk      ;
+; N/A   ; None         ; 4.866 ns   ; en           ; nBitRegister:flag_reg|\G0:5:dFFs  ; clk      ;
+; N/A   ; None         ; 4.856 ns   ; read_idx[5]  ; nBitRegister:flag_reg|\G0:5:dFFs  ; clk      ;
+; N/A   ; None         ; 4.844 ns   ; en           ; nBitRegister:flag_reg|\G0:25:dFFs ; clk      ;
+; N/A   ; None         ; 4.842 ns   ; read_idx[20] ; nBitRegister:flag_reg|\G0:20:dFFs ; clk      ;
+; N/A   ; None         ; 4.823 ns   ; en           ; nBitRegister:flag_reg|\G0:0:dFFs  ; clk      ;
+; N/A   ; None         ; 4.818 ns   ; read_idx[19] ; nBitRegister:flag_reg|\G0:19:dFFs ; clk      ;
+; N/A   ; None         ; 4.814 ns   ; read_idx[31] ; nBitRegister:flag_reg|\G0:31:dFFs ; clk      ;
+; N/A   ; None         ; 4.801 ns   ; read_idx[8]  ; nBitRegister:flag_reg|\G0:8:dFFs  ; clk      ;
+; N/A   ; None         ; 4.795 ns   ; read_idx[6]  ; nBitRegister:flag_reg|\G0:6:dFFs  ; clk      ;
+; N/A   ; None         ; 4.782 ns   ; en           ; nBitRegister:flag_reg|\G0:10:dFFs ; clk      ;
+; N/A   ; None         ; 4.771 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:9:dFFs  ; clk      ;
+; N/A   ; None         ; 4.762 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:24:dFFs ; clk      ;
+; N/A   ; None         ; 4.753 ns   ; en           ; nBitRegister:flag_reg|\G0:18:dFFs ; clk      ;
+; N/A   ; None         ; 4.745 ns   ; en           ; nBitRegister:flag_reg|\G0:12:dFFs ; clk      ;
+; N/A   ; None         ; 4.744 ns   ; read_idx[27] ; nBitRegister:flag_reg|\G0:27:dFFs ; clk      ;
+; N/A   ; None         ; 4.738 ns   ; read_idx[1]  ; nBitRegister:flag_reg|\G0:1:dFFs  ; clk      ;
+; N/A   ; None         ; 4.717 ns   ; en           ; nBitRegister:flag_reg|\G0:26:dFFs ; clk      ;
+; N/A   ; None         ; 4.707 ns   ; read_idx[10] ; nBitRegister:flag_reg|\G0:10:dFFs ; clk      ;
+; N/A   ; None         ; 4.693 ns   ; en           ; nBitRegister:flag_reg|\G0:14:dFFs ; clk      ;
+; N/A   ; None         ; 4.686 ns   ; en           ; nBitRegister:flag_reg|\G0:27:dFFs ; clk      ;
+; N/A   ; None         ; 4.656 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:11:dFFs ; clk      ;
+; N/A   ; None         ; 4.640 ns   ; read_idx[2]  ; nBitRegister:flag_reg|\G0:2:dFFs  ; clk      ;
+; N/A   ; None         ; 4.635 ns   ; read_idx[23] ; nBitRegister:flag_reg|\G0:23:dFFs ; clk      ;
+; N/A   ; None         ; 4.628 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:1:dFFs  ; clk      ;
+; N/A   ; None         ; 4.626 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:5:dFFs  ; clk      ;
+; N/A   ; None         ; 4.609 ns   ; read_idx[13] ; nBitRegister:flag_reg|\G0:13:dFFs ; clk      ;
+; N/A   ; None         ; 4.605 ns   ; read_idx[22] ; nBitRegister:flag_reg|\G0:22:dFFs ; clk      ;
+; N/A   ; None         ; 4.602 ns   ; en           ; curr_state.search                 ; clk      ;
+; N/A   ; None         ; 4.586 ns   ; en           ; nBitRegister:flag_reg|\G0:3:dFFs  ; clk      ;
+; N/A   ; None         ; 4.582 ns   ; en           ; nBitRegister:flag_reg|\G0:2:dFFs  ; clk      ;
+; N/A   ; None         ; 4.550 ns   ; en           ; nBitRegister:flag_reg|\G0:8:dFFs  ; clk      ;
+; N/A   ; None         ; 4.546 ns   ; en           ; nBitRegister:flag_reg|\G0:23:dFFs ; clk      ;
+; N/A   ; None         ; 4.545 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:30:dFFs ; clk      ;
+; N/A   ; None         ; 4.541 ns   ; en           ; nBitRegister:flag_reg|\G0:6:dFFs  ; clk      ;
+; N/A   ; None         ; 4.537 ns   ; read_idx[9]  ; nBitRegister:flag_reg|\G0:9:dFFs  ; clk      ;
+; N/A   ; None         ; 4.534 ns   ; read_idx[11] ; nBitRegister:flag_reg|\G0:11:dFFs ; clk      ;
+; N/A   ; None         ; 4.521 ns   ; read_idx[12] ; nBitRegister:flag_reg|\G0:12:dFFs ; clk      ;
+; N/A   ; None         ; 4.516 ns   ; en           ; nBitRegister:flag_reg|\G0:7:dFFs  ; clk      ;
+; N/A   ; None         ; 4.514 ns   ; en           ; nBitRegister:flag_reg|\G0:1:dFFs  ; clk      ;
+; N/A   ; None         ; 4.504 ns   ; en           ; nBitRegister:flag_reg|\G0:13:dFFs ; clk      ;
+; N/A   ; None         ; 4.497 ns   ; wr_en        ; curr_state.search                 ; clk      ;
+; N/A   ; None         ; 4.475 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:26:dFFs ; clk      ;
+; N/A   ; None         ; 4.465 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:3:dFFs  ; clk      ;
+; N/A   ; None         ; 4.460 ns   ; en           ; nBitRegister:flag_reg|\G0:11:dFFs ; clk      ;
+; N/A   ; None         ; 4.452 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:2:dFFs  ; clk      ;
+; N/A   ; None         ; 4.446 ns   ; read_idx[4]  ; nBitRegister:flag_reg|\G0:4:dFFs  ; clk      ;
+; N/A   ; None         ; 4.446 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:27:dFFs ; clk      ;
+; N/A   ; None         ; 4.440 ns   ; read_idx[3]  ; nBitRegister:flag_reg|\G0:3:dFFs  ; clk      ;
+; N/A   ; None         ; 4.407 ns   ; en           ; nBitRegister:flag_reg|\G0:4:dFFs  ; clk      ;
+; N/A   ; None         ; 4.401 ns   ; en           ; nBitRegister:flag_reg|\G0:29:dFFs ; clk      ;
+; N/A   ; None         ; 4.364 ns   ; en           ; nBitRegister:flag_reg|\G0:24:dFFs ; clk      ;
+; N/A   ; None         ; 4.242 ns   ; en           ; nBitRegister:flag_reg|\G0:9:dFFs  ; clk      ;
+; N/A   ; None         ; 4.237 ns   ; en           ; nBitRegister:flag_reg|\G0:22:dFFs ; clk      ;
+; N/A   ; None         ; 4.234 ns   ; read_idx[24] ; nBitRegister:flag_reg|\G0:24:dFFs ; clk      ;
+; N/A   ; None         ; 4.224 ns   ; read_idx[18] ; nBitRegister:flag_reg|\G0:18:dFFs ; clk      ;
+; N/A   ; None         ; 4.185 ns   ; en           ; curr_state.ready                  ; clk      ;
+; N/A   ; None         ; 4.167 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:4:dFFs  ; clk      ;
+; N/A   ; None         ; 4.163 ns   ; wr_en        ; nBitRegister:flag_reg|\G0:29:dFFs ; clk      ;
++-------+--------------+------------+--------------+-----------------------------------+----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                                                   ;
++-------+--------------+------------+----------------------------------------------------------------------+---------------+------------+
+; Slack ; Required tco ; Actual tco ; From                                                                 ; To            ; From Clock ;
++-------+--------------+------------+----------------------------------------------------------------------+---------------+------------+
+; N/A   ; None         ; 7.638 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[0]  ; write_idx[0]  ; clk        ;
+; N/A   ; None         ; 7.141 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[28] ; write_idx[28] ; clk        ;
+; N/A   ; None         ; 7.092 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[19] ; write_idx[19] ; clk        ;
+; N/A   ; None         ; 6.976 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[16] ; write_idx[16] ; clk        ;
+; N/A   ; None         ; 6.881 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[3]  ; write_idx[3]  ; clk        ;
+; N/A   ; None         ; 6.880 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[23] ; write_idx[23] ; clk        ;
+; N/A   ; None         ; 6.828 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[4]  ; write_idx[4]  ; clk        ;
+; N/A   ; None         ; 6.777 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[13] ; write_idx[13] ; clk        ;
+; N/A   ; None         ; 6.773 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[6]  ; write_idx[6]  ; clk        ;
+; N/A   ; None         ; 6.755 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[8]  ; write_idx[8]  ; clk        ;
+; N/A   ; None         ; 6.647 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[22] ; write_idx[22] ; clk        ;
+; N/A   ; None         ; 6.645 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[17] ; write_idx[17] ; clk        ;
+; N/A   ; None         ; 6.619 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[15] ; write_idx[15] ; clk        ;
+; N/A   ; None         ; 6.592 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25] ; write_idx[25] ; clk        ;
+; N/A   ; None         ; 6.568 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[26] ; write_idx[26] ; clk        ;
+; N/A   ; None         ; 6.556 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[21] ; write_idx[21] ; clk        ;
+; N/A   ; None         ; 6.494 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[9]  ; write_idx[9]  ; clk        ;
+; N/A   ; None         ; 6.467 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[7]  ; write_idx[7]  ; clk        ;
+; N/A   ; None         ; 6.463 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[1]  ; write_idx[1]  ; clk        ;
+; N/A   ; None         ; 6.436 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[27] ; write_idx[27] ; clk        ;
+; N/A   ; None         ; 6.428 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[12] ; write_idx[12] ; clk        ;
+; N/A   ; None         ; 6.405 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[10] ; write_idx[10] ; clk        ;
+; N/A   ; None         ; 6.382 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[20] ; write_idx[20] ; clk        ;
+; N/A   ; None         ; 6.371 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]  ; write_idx[5]  ; clk        ;
+; N/A   ; None         ; 6.345 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[29] ; write_idx[29] ; clk        ;
+; N/A   ; None         ; 6.196 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[18] ; write_idx[18] ; clk        ;
+; N/A   ; None         ; 6.188 ns   ; curr_state.valid                                                     ; vld           ; clk        ;
+; N/A   ; None         ; 6.155 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[2]  ; write_idx[2]  ; clk        ;
+; N/A   ; None         ; 6.153 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[14] ; write_idx[14] ; clk        ;
+; N/A   ; None         ; 6.136 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[24] ; write_idx[24] ; clk        ;
+; N/A   ; None         ; 6.130 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[11] ; write_idx[11] ; clk        ;
+; N/A   ; None         ; 6.127 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[30] ; write_idx[30] ; clk        ;
+; N/A   ; None         ; 6.105 ns   ; lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[31] ; write_idx[31] ; clk        ;
++-------+--------------+------------+----------------------------------------------------------------------+---------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; th                                                                                                    ;
++---------------+-------------+-----------+--------------+-----------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From         ; To                                ; To Clock ;
++---------------+-------------+-----------+--------------+-----------------------------------+----------+
+; N/A           ; None        ; -3.933 ns ; wr_en        ; nBitRegister:flag_reg|\G0:29:dFFs ; clk      ;
+; N/A           ; None        ; -3.937 ns ; wr_en        ; nBitRegister:flag_reg|\G0:4:dFFs  ; clk      ;
+; N/A           ; None        ; -3.955 ns ; en           ; curr_state.ready                  ; clk      ;
+; N/A           ; None        ; -3.994 ns ; read_idx[18] ; nBitRegister:flag_reg|\G0:18:dFFs ; clk      ;
+; N/A           ; None        ; -4.004 ns ; read_idx[24] ; nBitRegister:flag_reg|\G0:24:dFFs ; clk      ;
+; N/A           ; None        ; -4.007 ns ; en           ; nBitRegister:flag_reg|\G0:22:dFFs ; clk      ;
+; N/A           ; None        ; -4.012 ns ; en           ; nBitRegister:flag_reg|\G0:9:dFFs  ; clk      ;
+; N/A           ; None        ; -4.134 ns ; en           ; nBitRegister:flag_reg|\G0:24:dFFs ; clk      ;
+; N/A           ; None        ; -4.171 ns ; en           ; nBitRegister:flag_reg|\G0:29:dFFs ; clk      ;
+; N/A           ; None        ; -4.177 ns ; en           ; nBitRegister:flag_reg|\G0:4:dFFs  ; clk      ;
+; N/A           ; None        ; -4.210 ns ; read_idx[3]  ; nBitRegister:flag_reg|\G0:3:dFFs  ; clk      ;
+; N/A           ; None        ; -4.216 ns ; read_idx[4]  ; nBitRegister:flag_reg|\G0:4:dFFs  ; clk      ;
+; N/A           ; None        ; -4.216 ns ; wr_en        ; nBitRegister:flag_reg|\G0:27:dFFs ; clk      ;
+; N/A           ; None        ; -4.222 ns ; wr_en        ; nBitRegister:flag_reg|\G0:2:dFFs  ; clk      ;
+; N/A           ; None        ; -4.230 ns ; en           ; nBitRegister:flag_reg|\G0:11:dFFs ; clk      ;
+; N/A           ; None        ; -4.235 ns ; wr_en        ; nBitRegister:flag_reg|\G0:3:dFFs  ; clk      ;
+; N/A           ; None        ; -4.245 ns ; wr_en        ; nBitRegister:flag_reg|\G0:26:dFFs ; clk      ;
+; N/A           ; None        ; -4.267 ns ; wr_en        ; curr_state.search                 ; clk      ;
+; N/A           ; None        ; -4.274 ns ; en           ; nBitRegister:flag_reg|\G0:13:dFFs ; clk      ;
+; N/A           ; None        ; -4.284 ns ; en           ; nBitRegister:flag_reg|\G0:1:dFFs  ; clk      ;
+; N/A           ; None        ; -4.286 ns ; en           ; nBitRegister:flag_reg|\G0:7:dFFs  ; clk      ;
+; N/A           ; None        ; -4.291 ns ; read_idx[12] ; nBitRegister:flag_reg|\G0:12:dFFs ; clk      ;
+; N/A           ; None        ; -4.304 ns ; read_idx[11] ; nBitRegister:flag_reg|\G0:11:dFFs ; clk      ;
+; N/A           ; None        ; -4.307 ns ; read_idx[9]  ; nBitRegister:flag_reg|\G0:9:dFFs  ; clk      ;
+; N/A           ; None        ; -4.311 ns ; en           ; nBitRegister:flag_reg|\G0:6:dFFs  ; clk      ;
+; N/A           ; None        ; -4.315 ns ; wr_en        ; nBitRegister:flag_reg|\G0:30:dFFs ; clk      ;
+; N/A           ; None        ; -4.316 ns ; en           ; nBitRegister:flag_reg|\G0:23:dFFs ; clk      ;
+; N/A           ; None        ; -4.320 ns ; en           ; nBitRegister:flag_reg|\G0:8:dFFs  ; clk      ;
+; N/A           ; None        ; -4.352 ns ; en           ; nBitRegister:flag_reg|\G0:2:dFFs  ; clk      ;
+; N/A           ; None        ; -4.356 ns ; en           ; nBitRegister:flag_reg|\G0:3:dFFs  ; clk      ;
+; N/A           ; None        ; -4.372 ns ; en           ; curr_state.search                 ; clk      ;
+; N/A           ; None        ; -4.375 ns ; read_idx[22] ; nBitRegister:flag_reg|\G0:22:dFFs ; clk      ;
+; N/A           ; None        ; -4.379 ns ; read_idx[13] ; nBitRegister:flag_reg|\G0:13:dFFs ; clk      ;
+; N/A           ; None        ; -4.396 ns ; wr_en        ; nBitRegister:flag_reg|\G0:5:dFFs  ; clk      ;
+; N/A           ; None        ; -4.398 ns ; wr_en        ; nBitRegister:flag_reg|\G0:1:dFFs  ; clk      ;
+; N/A           ; None        ; -4.405 ns ; read_idx[23] ; nBitRegister:flag_reg|\G0:23:dFFs ; clk      ;
+; N/A           ; None        ; -4.410 ns ; read_idx[2]  ; nBitRegister:flag_reg|\G0:2:dFFs  ; clk      ;
+; N/A           ; None        ; -4.426 ns ; wr_en        ; nBitRegister:flag_reg|\G0:11:dFFs ; clk      ;
+; N/A           ; None        ; -4.456 ns ; en           ; nBitRegister:flag_reg|\G0:27:dFFs ; clk      ;
+; N/A           ; None        ; -4.463 ns ; en           ; nBitRegister:flag_reg|\G0:14:dFFs ; clk      ;
+; N/A           ; None        ; -4.477 ns ; read_idx[10] ; nBitRegister:flag_reg|\G0:10:dFFs ; clk      ;
+; N/A           ; None        ; -4.487 ns ; en           ; nBitRegister:flag_reg|\G0:26:dFFs ; clk      ;
+; N/A           ; None        ; -4.508 ns ; read_idx[1]  ; nBitRegister:flag_reg|\G0:1:dFFs  ; clk      ;
+; N/A           ; None        ; -4.514 ns ; read_idx[27] ; nBitRegister:flag_reg|\G0:27:dFFs ; clk      ;
+; N/A           ; None        ; -4.515 ns ; en           ; nBitRegister:flag_reg|\G0:12:dFFs ; clk      ;
+; N/A           ; None        ; -4.523 ns ; en           ; nBitRegister:flag_reg|\G0:18:dFFs ; clk      ;
+; N/A           ; None        ; -4.532 ns ; wr_en        ; nBitRegister:flag_reg|\G0:24:dFFs ; clk      ;
+; N/A           ; None        ; -4.541 ns ; wr_en        ; nBitRegister:flag_reg|\G0:9:dFFs  ; clk      ;
+; N/A           ; None        ; -4.552 ns ; en           ; nBitRegister:flag_reg|\G0:10:dFFs ; clk      ;
+; N/A           ; None        ; -4.565 ns ; read_idx[6]  ; nBitRegister:flag_reg|\G0:6:dFFs  ; clk      ;
+; N/A           ; None        ; -4.571 ns ; read_idx[8]  ; nBitRegister:flag_reg|\G0:8:dFFs  ; clk      ;
+; N/A           ; None        ; -4.584 ns ; read_idx[31] ; nBitRegister:flag_reg|\G0:31:dFFs ; clk      ;
+; N/A           ; None        ; -4.588 ns ; read_idx[19] ; nBitRegister:flag_reg|\G0:19:dFFs ; clk      ;
+; N/A           ; None        ; -4.593 ns ; en           ; nBitRegister:flag_reg|\G0:0:dFFs  ; clk      ;
+; N/A           ; None        ; -4.612 ns ; read_idx[20] ; nBitRegister:flag_reg|\G0:20:dFFs ; clk      ;
+; N/A           ; None        ; -4.614 ns ; en           ; nBitRegister:flag_reg|\G0:25:dFFs ; clk      ;
+; N/A           ; None        ; -4.626 ns ; read_idx[5]  ; nBitRegister:flag_reg|\G0:5:dFFs  ; clk      ;
+; N/A           ; None        ; -4.636 ns ; en           ; nBitRegister:flag_reg|\G0:5:dFFs  ; clk      ;
+; N/A           ; None        ; -4.657 ns ; read_idx[0]  ; nBitRegister:flag_reg|\G0:0:dFFs  ; clk      ;
+; N/A           ; None        ; -4.670 ns ; wr_en        ; nBitRegister:flag_reg|\G0:13:dFFs ; clk      ;
+; N/A           ; None        ; -4.687 ns ; wr_en        ; nBitRegister:flag_reg|\G0:14:dFFs ; clk      ;
+; N/A           ; None        ; -4.701 ns ; en           ; nBitRegister:flag_reg|\G0:19:dFFs ; clk      ;
+; N/A           ; None        ; -4.705 ns ; read_idx[29] ; nBitRegister:flag_reg|\G0:29:dFFs ; clk      ;
+; N/A           ; None        ; -4.706 ns ; wr_en        ; curr_state.ready                  ; clk      ;
+; N/A           ; None        ; -4.718 ns ; wr_en        ; nBitRegister:flag_reg|\G0:12:dFFs ; clk      ;
+; N/A           ; None        ; -4.722 ns ; wr_en        ; nBitRegister:flag_reg|\G0:25:dFFs ; clk      ;
+; N/A           ; None        ; -4.728 ns ; wr_en        ; nBitRegister:flag_reg|\G0:22:dFFs ; clk      ;
+; N/A           ; None        ; -4.737 ns ; read_idx[14] ; nBitRegister:flag_reg|\G0:14:dFFs ; clk      ;
+; N/A           ; None        ; -4.737 ns ; wr_en        ; nBitRegister:flag_reg|\G0:31:dFFs ; clk      ;
+; N/A           ; None        ; -4.767 ns ; wr_en        ; nBitRegister:flag_reg|\G0:10:dFFs ; clk      ;
+; N/A           ; None        ; -4.801 ns ; wr_en        ; nBitRegister:flag_reg|\G0:0:dFFs  ; clk      ;
+; N/A           ; None        ; -4.802 ns ; read_idx[25] ; nBitRegister:flag_reg|\G0:25:dFFs ; clk      ;
+; N/A           ; None        ; -4.807 ns ; read_idx[7]  ; nBitRegister:flag_reg|\G0:7:dFFs  ; clk      ;
+; N/A           ; None        ; -4.811 ns ; read_idx[15] ; nBitRegister:flag_reg|\G0:15:dFFs ; clk      ;
+; N/A           ; None        ; -4.817 ns ; wr_en        ; nBitRegister:flag_reg|\G0:7:dFFs  ; clk      ;
+; N/A           ; None        ; -4.841 ns ; read_idx[30] ; nBitRegister:flag_reg|\G0:30:dFFs ; clk      ;
+; N/A           ; None        ; -4.844 ns ; wr_en        ; nBitRegister:flag_reg|\G0:6:dFFs  ; clk      ;
+; N/A           ; None        ; -4.848 ns ; wr_en        ; nBitRegister:flag_reg|\G0:8:dFFs  ; clk      ;
+; N/A           ; None        ; -4.859 ns ; en           ; nBitRegister:flag_reg|\G0:31:dFFs ; clk      ;
+; N/A           ; None        ; -4.934 ns ; en           ; nBitRegister:flag_reg|\G0:30:dFFs ; clk      ;
+; N/A           ; None        ; -4.983 ns ; read_idx[26] ; nBitRegister:flag_reg|\G0:26:dFFs ; clk      ;
+; N/A           ; None        ; -4.986 ns ; en           ; nBitRegister:flag_reg|\G0:21:dFFs ; clk      ;
+; N/A           ; None        ; -4.986 ns ; en           ; nBitRegister:flag_reg|\G0:15:dFFs ; clk      ;
+; N/A           ; None        ; -5.000 ns ; wr_en        ; nBitRegister:flag_reg|\G0:18:dFFs ; clk      ;
+; N/A           ; None        ; -5.016 ns ; wr_en        ; nBitRegister:flag_reg|\G0:28:dFFs ; clk      ;
+; N/A           ; None        ; -5.019 ns ; read_idx[17] ; nBitRegister:flag_reg|\G0:17:dFFs ; clk      ;
+; N/A           ; None        ; -5.024 ns ; read_idx[28] ; nBitRegister:flag_reg|\G0:28:dFFs ; clk      ;
+; N/A           ; None        ; -5.037 ns ; wr_en        ; nBitRegister:flag_reg|\G0:23:dFFs ; clk      ;
+; N/A           ; None        ; -5.047 ns ; wr_en        ; nBitRegister:flag_reg|\G0:21:dFFs ; clk      ;
+; N/A           ; None        ; -5.057 ns ; read_idx[21] ; nBitRegister:flag_reg|\G0:21:dFFs ; clk      ;
+; N/A           ; None        ; -5.128 ns ; en           ; nBitRegister:flag_reg|\G0:20:dFFs ; clk      ;
+; N/A           ; None        ; -5.146 ns ; en           ; nBitRegister:flag_reg|\G0:28:dFFs ; clk      ;
+; N/A           ; None        ; -5.168 ns ; en           ; nBitRegister:flag_reg|\G0:17:dFFs ; clk      ;
+; N/A           ; None        ; -5.187 ns ; wr_en        ; nBitRegister:flag_reg|\G0:20:dFFs ; clk      ;
+; N/A           ; None        ; -5.213 ns ; wr_en        ; nBitRegister:flag_reg|\G0:15:dFFs ; clk      ;
+; N/A           ; None        ; -5.378 ns ; read_idx[16] ; nBitRegister:flag_reg|\G0:16:dFFs ; clk      ;
+; N/A           ; None        ; -5.394 ns ; wr_en        ; nBitRegister:flag_reg|\G0:17:dFFs ; clk      ;
+; N/A           ; None        ; -5.418 ns ; wr_en        ; nBitRegister:flag_reg|\G0:19:dFFs ; clk      ;
+; N/A           ; None        ; -5.436 ns ; en           ; nBitRegister:flag_reg|\G0:16:dFFs ; clk      ;
+; N/A           ; None        ; -5.665 ns ; wr_en        ; nBitRegister:flag_reg|\G0:16:dFFs ; clk      ;
++---------------+-------------+-----------+--------------+-----------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Mar 06 14:27:54 2014
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off table -c table --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 208.99 MHz between source register "lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]" and destination register "lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25]" (period= 4.785 ns)
+    Info: + Longest register to register delay is 4.557 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X20_Y4_N31; Fanout = 5; REG Node = 'lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]'
+        Info: 2: + IC(0.772 ns) + CELL(0.419 ns) = 1.191 ns; Loc. = LCCOMB_X21_Y4_N4; Fanout = 1; COMB Node = 'Equal0~16'
+        Info: 3: + IC(0.249 ns) + CELL(0.420 ns) = 1.860 ns; Loc. = LCCOMB_X21_Y4_N14; Fanout = 1; COMB Node = 'Equal0~19'
+        Info: 4: + IC(0.422 ns) + CELL(0.438 ns) = 2.720 ns; Loc. = LCCOMB_X21_Y4_N30; Fanout = 3; COMB Node = 'Equal0~20'
+        Info: 5: + IC(0.262 ns) + CELL(0.150 ns) = 3.132 ns; Loc. = LCCOMB_X21_Y4_N0; Fanout = 32; COMB Node = 'Selector1~0'
+        Info: 6: + IC(0.765 ns) + CELL(0.660 ns) = 4.557 ns; Loc. = LCFF_X22_Y6_N9; Fanout = 5; REG Node = 'lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25]'
+        Info: Total cell delay = 2.087 ns ( 45.80 % )
+        Info: Total interconnect delay = 2.470 ns ( 54.20 % )
+    Info: - Smallest clock skew is -0.014 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 2.333 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.979 ns) = 0.979 ns; Loc. = PIN_H2; Fanout = 1; CLK Node = 'clk'
+            Info: 2: + IC(0.122 ns) + CELL(0.000 ns) = 1.101 ns; Loc. = CLKCTRL_G2; Fanout = 67; COMB Node = 'clk~clkctrl'
+            Info: 3: + IC(0.695 ns) + CELL(0.537 ns) = 2.333 ns; Loc. = LCFF_X22_Y6_N9; Fanout = 5; REG Node = 'lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[25]'
+            Info: Total cell delay = 1.516 ns ( 64.98 % )
+            Info: Total interconnect delay = 0.817 ns ( 35.02 % )
+        Info: - Longest clock path from clock "clk" to source register is 2.347 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.979 ns) = 0.979 ns; Loc. = PIN_H2; Fanout = 1; CLK Node = 'clk'
+            Info: 2: + IC(0.122 ns) + CELL(0.000 ns) = 1.101 ns; Loc. = CLKCTRL_G2; Fanout = 67; COMB Node = 'clk~clkctrl'
+            Info: 3: + IC(0.709 ns) + CELL(0.537 ns) = 2.347 ns; Loc. = LCFF_X20_Y4_N31; Fanout = 5; REG Node = 'lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[5]'
+            Info: Total cell delay = 1.516 ns ( 64.59 % )
+            Info: Total interconnect delay = 0.831 ns ( 35.41 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Micro setup delay of destination is -0.036 ns
+Info: tsu for register "nBitRegister:flag_reg|\G0:16:dFFs" (data pin = "wr_en", clock pin = "clk") is 5.895 ns
+    Info: + Longest pin to register delay is 8.276 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.810 ns) = 0.810 ns; Loc. = PIN_N11; Fanout = 34; PIN Node = 'wr_en'
+        Info: 2: + IC(5.427 ns) + CELL(0.398 ns) = 6.635 ns; Loc. = LCCOMB_X21_Y5_N22; Fanout = 1; COMB Node = 'flags_in[16]~42'
+        Info: 3: + IC(1.119 ns) + CELL(0.438 ns) = 8.192 ns; Loc. = LCCOMB_X21_Y5_N6; Fanout = 1; COMB Node = 'flags_in[16]~44'
+        Info: 4: + IC(0.000 ns) + CELL(0.084 ns) = 8.276 ns; Loc. = LCFF_X21_Y5_N7; Fanout = 2; REG Node = 'nBitRegister:flag_reg|\G0:16:dFFs'
+        Info: Total cell delay = 1.730 ns ( 20.90 % )
+        Info: Total interconnect delay = 6.546 ns ( 79.10 % )
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 2.345 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.979 ns) = 0.979 ns; Loc. = PIN_H2; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.122 ns) + CELL(0.000 ns) = 1.101 ns; Loc. = CLKCTRL_G2; Fanout = 67; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(0.707 ns) + CELL(0.537 ns) = 2.345 ns; Loc. = LCFF_X21_Y5_N7; Fanout = 2; REG Node = 'nBitRegister:flag_reg|\G0:16:dFFs'
+        Info: Total cell delay = 1.516 ns ( 64.65 % )
+        Info: Total interconnect delay = 0.829 ns ( 35.35 % )
+Info: tco from clock "clk" to destination pin "write_idx[0]" through register "lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[0]" is 7.638 ns
+    Info: + Longest clock path from clock "clk" to source register is 2.349 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.979 ns) = 0.979 ns; Loc. = PIN_H2; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.122 ns) + CELL(0.000 ns) = 1.101 ns; Loc. = CLKCTRL_G2; Fanout = 67; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(0.711 ns) + CELL(0.537 ns) = 2.349 ns; Loc. = LCFF_X21_Y4_N19; Fanout = 5; REG Node = 'lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[0]'
+        Info: Total cell delay = 1.516 ns ( 64.54 % )
+        Info: Total interconnect delay = 0.833 ns ( 35.46 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Longest register to pin delay is 5.039 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X21_Y4_N19; Fanout = 5; REG Node = 'lru_shiftreg:clock_hand|lpm_shiftreg:lpm_shiftreg_component|dffs[0]'
+        Info: 2: + IC(2.407 ns) + CELL(2.632 ns) = 5.039 ns; Loc. = PIN_D16; Fanout = 0; PIN Node = 'write_idx[0]'
+        Info: Total cell delay = 2.632 ns ( 52.23 % )
+        Info: Total interconnect delay = 2.407 ns ( 47.77 % )
+Info: th for register "nBitRegister:flag_reg|\G0:29:dFFs" (data pin = "wr_en", clock pin = "clk") is -3.933 ns
+    Info: + Longest clock path from clock "clk" to destination register is 2.347 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.979 ns) = 0.979 ns; Loc. = PIN_H2; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.122 ns) + CELL(0.000 ns) = 1.101 ns; Loc. = CLKCTRL_G2; Fanout = 67; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(0.709 ns) + CELL(0.537 ns) = 2.347 ns; Loc. = LCFF_X20_Y4_N19; Fanout = 2; REG Node = 'nBitRegister:flag_reg|\G0:29:dFFs'
+        Info: Total cell delay = 1.516 ns ( 64.59 % )
+        Info: Total interconnect delay = 0.831 ns ( 35.41 % )
+    Info: + Micro hold delay of destination is 0.266 ns
+    Info: - Shortest pin to register delay is 6.546 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.810 ns) = 0.810 ns; Loc. = PIN_N11; Fanout = 34; PIN Node = 'wr_en'
+        Info: 2: + IC(4.884 ns) + CELL(0.378 ns) = 6.072 ns; Loc. = LCCOMB_X20_Y4_N10; Fanout = 1; COMB Node = 'flags_in[29]~9'
+        Info: 3: + IC(0.240 ns) + CELL(0.150 ns) = 6.462 ns; Loc. = LCCOMB_X20_Y4_N18; Fanout = 1; COMB Node = 'flags_in[29]~11'
+        Info: 4: + IC(0.000 ns) + CELL(0.084 ns) = 6.546 ns; Loc. = LCFF_X20_Y4_N19; Fanout = 2; REG Node = 'nBitRegister:flag_reg|\G0:29:dFFs'
+        Info: Total cell delay = 1.422 ns ( 21.72 % )
+        Info: Total interconnect delay = 5.124 ns ( 78.28 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 166 megabytes
+    Info: Processing ended: Thu Mar 06 14:27:54 2014
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

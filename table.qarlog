@@ -1,0 +1,36 @@
+Quartus II Archive log --	C:/Users/geo4/Documents/ECE 559/table/table.qarlog
+
+Archive:	C:/Users/geo4/Documents/ECE 559/table/table.qar
+Date:		Wed Mar 05 17:46:08 2014
+Quartus II		9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
+
+	=========== Files Selected: ===========
+C:/Users/geo4/Documents/ECE 559/table/CAM.vhd
+C:/Users/geo4/Documents/ECE 559/table/assignment_defaults.qdf
+C:/Users/geo4/Documents/ECE 559/table/controller.vhd
+C:/Users/geo4/Documents/ECE 559/table/db/table.sim.cvwf
+C:/Users/geo4/Documents/ECE 559/table/lru.vhd
+C:/Users/geo4/Documents/ECE 559/table/lru_shiftreg.cmp
+C:/Users/geo4/Documents/ECE 559/table/lru_shiftreg.qip
+C:/Users/geo4/Documents/ECE 559/table/lru_shiftreg.vhd
+C:/Users/geo4/Documents/ECE 559/table/lru_test.vwf
+C:/Users/geo4/Documents/ECE 559/table/mac_latch.qip
+C:/Users/geo4/Documents/ECE 559/table/mac_latch.vhd
+C:/Users/geo4/Documents/ECE 559/table/nBitRegister.vhd
+C:/Users/geo4/Documents/ECE 559/table/port_latch.cmp
+C:/Users/geo4/Documents/ECE 559/table/port_latch.qip
+C:/Users/geo4/Documents/ECE 559/table/port_latch.vhd
+C:/Users/geo4/Documents/ECE 559/table/table.qpf
+C:/Users/geo4/Documents/ECE 559/table/table.qsf
+C:/Users/geo4/Documents/ECE 559/table/table.vhd
+C:/Users/geo4/Documents/ECE 559/table/timeout.vhd
+C:/Users/geo4/Documents/ECE 559/table/timeout_counter.cmp
+C:/Users/geo4/Documents/ECE 559/table/timeout_counter.qip
+C:/Users/geo4/Documents/ECE 559/table/timeout_counter.vhd
+C:/Users/geo4/Documents/ECE 559/table/timeout_latch.cmp
+C:/Users/geo4/Documents/ECE 559/table/timeout_latch.qip
+C:/Users/geo4/Documents/ECE 559/table/timeout_latch.vhd
+	======= Total: 25 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

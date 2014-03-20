@@ -1,0 +1,51 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity timeout is
+	port(
+		--input
+		clk, reset: in STD_LOGIC;
+		
+		updated : in std_logic_vector(31 downto 0);
+		timed_out : out std_logic_vector(31 downto 0)
+		);
+end timeout;
+
+architecture fsm of timeout is
+
+component timeout_counter
+	PORT
+	(
+		aclr		: IN STD_LOGIC ;
+		clock		: IN STD_LOGIC ;
+		sclr		: IN STD_LOGIC ;
+		q		: OUT STD_LOGIC_VECTOR (33 DOWNTO 0)
+	);
+end component;
+
+component timeout_latch
+	PORT
+	(
+		aclr		: IN STD_LOGIC ;
+		data		: IN STD_LOGIC ;
+		gate		: IN STD_LOGIC ;
+		q		: OUT STD_LOGIC 
+	);
+end component;
+
+begin
+
+f:
+    for i in 31 downto 0 generate
+    signal test : std_logic_vector(33 downto 0);
+    signal comp : std_logic;
+    signal s_reset : std_logic;
+    begin
+        timer: timeout_counter port map(reset, clk, updated(i), test);
+        compare:
+            comp <= '1' when (test = "1101111110000100011101011000000000") else '0';
+            s_reset <= '1' when (clk'event and clk = '1' and updated(i)) else '0';
+        latch: timeout_latch port map(reset or s_reset, '1', comp, timed_out(i));
+    end generate f;
+
+end fsm;
