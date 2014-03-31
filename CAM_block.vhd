@@ -32,7 +32,7 @@ end component;
 begin
 comp:process(mac_cont, r_addr, r_port_buff)
 begin
-if(mac_cont = r_addr AND r_port_buff /= "0000") then
+if(mac_cont = r_addr AND r_port_buff /= "0000" AND wr_en /= '1') then
 	addr_comp <= '1';
 	r_port <= r_port_buff;
 else

@@ -16,7 +16,7 @@ entity port_out_fsm is
 end port_out_fsm;
 
 architecture a of port_out_fsm is
-	type state is (output_state, broadcast, single_port, reset_state);
+	type state is (ready_state, broadcast_state, single_port);
 	signal curr_state, next_state 	: state;
 	signal port_ff_in						: std_logic_vector(3 downto 0);
 	signal port_ff_out					: std_logic_vector(3 downto 0);
@@ -51,7 +51,7 @@ architecture a of port_out_fsm is
 	process (clk, reset)
 	begin
 		if (reset = '1') then
-			curr_state <= output_state;
+			curr_state <= ready_state;
 		elsif (clk'event and clk = '1') then
 			curr_state <= next_state; 
 		end if;
@@ -62,23 +62,19 @@ architecture a of port_out_fsm is
 	states: process (curr_state, next_state, ov_idx, in_vld)
 	begin
 		case (curr_state) is
-			when reset_state =>				
+			when ready_state =>				
 				if (ov_idx = "00000000000000000000000000000000" 
 						AND in_vld = '1') then
-					next_state <= broadcast;
-				else
+					next_state <= broadcast_state;
+				elsif in_vld = '1' then
 					next_state <= single_port;
+				else 
+					next_state <= ready_state;
 				end if;
-			when broadcast =>
-				next_state <= output_state;
+			when broadcast_state =>
+				next_state <= ready_state;
 			when single_port =>
-				next_state <= output_state;
-			when output_state =>
-				if(in_vld = '1') then
-					next_state <= reset_state;
-				else
-					next_state <= output_state;
-				end if; 
+				next_state <= ready_state;
 		end case;
 	end process states;
 	
@@ -86,18 +82,12 @@ architecture a of port_out_fsm is
 	moore: process (curr_state, internal_ov)
 	begin
 		case (curr_state) is
-			when reset_state =>
+			when ready_state =>
 				internal_ov <= '0';
-			when broadcast =>
+			when broadcast_state =>
 				internal_ov <= '1';
 			when single_port =>
 				internal_ov <= '1';
-			when output_state =>
-				if port_ff_out = "0000" then 
-					internal_ov <= '0';
-				else 
-					internal_ov <= '1';
-				end if;
 		end case;
 	end process moore;
  end a;

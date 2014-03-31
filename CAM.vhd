@@ -6,8 +6,8 @@ entity CAM is
 		--input
 		clk, reset: in std_logic;
 		
-		input_vld : in std_logic;
-		wr_en : in std_logic;
+		r_en : in std_logic; --read enable
+		wr_en : in std_logic; --write enable
 		wr_idx : in std_logic_vector(31 downto 0);
 		wr_addr : in std_logic_vector(47 downto 0);
 		wr_port : in std_logic_vector(3 downto 0);
@@ -70,10 +70,10 @@ cells:
 	for i in 31 downto 0 generate
 		signal wren_idx : std_logic;
 		begin
-			cam_block_cell: cam_block port map(clk=>clk, reset=>(reset OR timeout_clr(i)), 
+			cam_block_cell: cam_block port map(clk=>clk, reset=>(reset OR timeout_clr(i)), --ADD 'AND NOT BUSY'
 			wr_en=>(wr_en AND wr_idx(i)), wr_addr=>wr_addr, wr_port=>wr_port, r_addr=>r_addr,
 			r_port=>port_bus, out_vld=>out_vld_idx(i));
 	end generate cells;	
-output: port_out_fsm port map(clk, reset, out_vld_idx, port_bus, input_vld, r_vld, r_port);
+output: port_out_fsm port map(clk, reset, out_vld_idx, port_bus, r_en, r_vld, r_port);
 conn0: r_idx <= out_vld_idx;
 end struct;
