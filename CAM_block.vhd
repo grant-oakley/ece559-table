@@ -6,11 +6,11 @@ entity CAM_block is
 		--input
 		clk, reset: in STD_LOGIC;
 		
-		wr_en : in std_logic;
-		wr_addr : in std_logic_vector(47 downto 0);
-		wr_port : in std_logic_vector(3 downto 0);
-		
-		r_addr : in std_logic_vector(47 downto 0);
+		wr_en 	: in std_logic;
+		wr_addr 	: in std_logic_vector(47 downto 0);
+		wr_port 	: in std_logic_vector(3 downto 0);
+		r_en		: in std_logic;
+		r_addr 	: in std_logic_vector(47 downto 0);
 		--all ones if not in the table
 		r_port : out std_logic_vector(3 downto 0);
 		out_vld : out std_logic
@@ -30,9 +30,9 @@ component nBitRegister is
 end component;
 
 begin
-comp:process(mac_cont, r_addr, r_port_buff)
+comp:process(mac_cont, r_addr, r_port_buff, r_en)
 begin
-if(mac_cont = r_addr AND r_port_buff /= "0000" AND wr_en /= '1') then
+if(mac_cont = r_addr AND r_en = '1') then
 	addr_comp <= '1';
 	r_port <= r_port_buff;
 else
