@@ -17,7 +17,8 @@ entity controller is
 		debug_state: out std_LOGIC_VECTOR(2 downto 0);
 		debug_reg_1_out : out std_LOGIC_VECTOR(31 downto 0);
 		debug_CAM_write_addr : out std_LOGIC_VECTOR(47 downto 0);
-		debug_CAM_write_port : out std_LOGIC_VECTOR(3 downto 0)
+		debug_CAM_write_port : out std_LOGIC_VECTOR(3 downto 0);
+		debug_reg_2_out : out std_LOGIC_VECTOR(47 downto 0)
     );
 end controller;
 
@@ -69,7 +70,7 @@ architecture fsm of controller is
     end component;
     
 
-type state_type is (idle, latch_src_lookup_dest,wait_lookup_res, output_ready, query_src_addr, query_LRU, wait_LRU_res, update_CAM, update_CAM_cont);
+type state_type is (idle, lookup_dest,wait_lookup_res, output_ready, query_src_addr, query_LRU, wait_LRU_res, update_CAM, update_CAM_cont, latch_input);
 signal current_state, next_state: state_type;
 
 --register signals
@@ -112,7 +113,7 @@ reg_0: nBitRegister port map(clock, REG_write_en, reset, src_addr & r_port ,REG_
 -- register that latches index of next write to CAM
 reg_1: nBitRegister generic map(n => 32) port map(clock, REG_1_write_en, reset, REG_1_in ,REG_1_out);
 -- register that latches dest_addr
-reg_2: nBitRegister generic map(n => 48) port map(clock, REG_2_write_en, reset, src_addr ,REG_2_out);
+reg_2: nBitRegister generic map(n => 48) port map(clock, REG_2_write_en, reset, dest_addr ,REG_2_out);
 
 port_num <= CAM_port_out;
 
@@ -129,20 +130,24 @@ end process;
 
 process(current_state, data_vld, CAM_read_output_valid,dest_addr, CAM_idx_out, CAM_port_out, LRU_valid, LRU_freed_index, REG_1_in,REG_1_out, REG_out) 
 	begin
-		CAM_read_addr <= REG_2_out;
+		CAM_read_addr <= dest_addr;
 		REG_1_in <= CAM_idx_out;
 		REG_1_write_en <= '0';
 		REG_write_en <= '0';
 		LRU_write_en <= '0';
+		REG_2_write_en <= '0';
 		CAM_write_idx <= "00000000000000000000000000000000";
 		CAM_write_addr <= "000000000000000000000000000000000000000000000000";
 		CAM_write_port <= "0000";
 		next_state <= idle;
+		debug_reg_2_out <= REG_2_out;
 		
 		case current_state is
 			when idle =>
 				if data_vld = '1' then
-					next_state <= latch_src_lookup_dest;
+					REG_2_write_en <= '1';
+					REG_write_en <= '1';
+					next_state <= latch_input;
 				else 
 					next_state <= idle;
 				end if;
@@ -153,22 +158,18 @@ process(current_state, data_vld, CAM_read_output_valid,dest_addr, CAM_idx_out, C
 				CAM_read_en <= '0';
 				CAM_write_en <= '0';
 				LRU_en <='0';
-				REG_1_write_en <= '0';
 
 			when latch_input =>
-				REG_write_en <= '1';
-				REG_2_write_en <= '1';
-
+				next_state <= lookup_dest;
 				--default signals
 				debug_state<= "001";
 				port_vld <= '0';
 				CAM_read_en <= '0';
 				CAM_write_en <= '0';
 				LRU_en <='0';
-				REG_1_write_en <= '0';
-
-			when latch_src_lookup_dest =>
+			when lookup_dest =>
 				CAM_read_en <='1';
+				CAM_read_addr <= REG_2_out;
 				next_state <= wait_lookup_res;
 				
 				--default signals
