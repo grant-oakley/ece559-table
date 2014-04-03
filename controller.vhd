@@ -14,10 +14,10 @@ entity controller is
         port_num : out std_logic_vector(3 downto 0);
         port_vld : out std_logic;
 		  
-		  debug_state: out std_LOGIC_VECTOR(2 downto 0);
-		  debug_reg_1_out : out std_LOGIC_VECTOR(31 downto 0);
-			debug_CAM_write_addr : out std_LOGIC_VECTOR(47 downto 0);
-			debug_CAM_write_port : out std_LOGIC_VECTOR(3 downto 0)
+		debug_state: out std_LOGIC_VECTOR(2 downto 0);
+		debug_reg_1_out : out std_LOGIC_VECTOR(31 downto 0);
+		debug_CAM_write_addr : out std_LOGIC_VECTOR(47 downto 0);
+		debug_CAM_write_port : out std_LOGIC_VECTOR(3 downto 0)
     );
 end controller;
 
@@ -74,11 +74,13 @@ signal current_state, next_state: state_type;
 
 --register signals
 signal REG_write_en 		:std_logic;
-signal REG_1_write_en   :std_logic;
+signal REG_1_write_en   	:std_logic;
+signal REG_2_write_en		:std_logic;
 
 signal REG_out              :std_logic_vector(51 downto 0);
-signal REG_1_in				 :std_logic_vector(31 downto 0);
-signal REG_1_out				 :std_logic_vector(31 downto 0);
+signal REG_1_in				:std_logic_vector(31 downto 0);
+signal REG_1_out			:std_logic_vector(31 downto 0);
+signal REG_2_out			:std_logic_vector(47 downto 0);
 
 --CAM signals
 signal CAM_read_en			:std_logic;
@@ -104,9 +106,13 @@ begin
 
 
 lru_0: lru port map(clock, reset, LRU_en, LRU_write_en, CAM_idx_out, LRU_freed_index, LRU_valid);
-reg_0: nBitRegister port map(clock, REG_write_en, reset, src_addr & r_port ,REG_out);
-reg_1: nBitRegister generic map(n => 32) port map(clock, REG_1_write_en, reset, REG_1_in ,REG_1_out);
 cam_0: CAM port map(clock, reset, CAM_read_en, CAM_write_en, CAM_write_idx, CAM_write_addr, CAM_write_port, CAM_read_addr, CAM_port_out, CAM_idx_out, CAM_read_output_valid);
+--register that latches src_addr and src_port
+reg_0: nBitRegister port map(clock, REG_write_en, reset, src_addr & r_port ,REG_out);
+-- register that latches index of next write to CAM
+reg_1: nBitRegister generic map(n => 32) port map(clock, REG_1_write_en, reset, REG_1_in ,REG_1_out);
+-- register that latches dest_addr
+reg_2: nBitRegister generic map(n => 48) port map(clock, REG_2_write_en, reset, src_addr ,REG_2_out);
 
 port_num <= CAM_port_out;
 
@@ -123,7 +129,7 @@ end process;
 
 process(current_state, data_vld, CAM_read_output_valid,dest_addr, CAM_idx_out, CAM_port_out, LRU_valid, LRU_freed_index, REG_1_in,REG_1_out, REG_out) 
 	begin
-		CAM_read_addr <= dest_addr;
+		CAM_read_addr <= REG_2_out;
 		REG_1_in <= CAM_idx_out;
 		REG_1_write_en <= '0';
 		REG_write_en <= '0';
@@ -142,14 +148,26 @@ process(current_state, data_vld, CAM_read_output_valid,dest_addr, CAM_idx_out, C
 				end if;
 				
 				--default signals
+				debug_state<= "000";
+				port_vld <= '0';
+				CAM_read_en <= '0';
+				CAM_write_en <= '0';
+				LRU_en <='0';
+				REG_1_write_en <= '0';
+
+			when latch_input =>
+				REG_write_en <= '1';
+				REG_2_write_en <= '1';
+
+				--default signals
 				debug_state<= "001";
 				port_vld <= '0';
 				CAM_read_en <= '0';
 				CAM_write_en <= '0';
 				LRU_en <='0';
 				REG_1_write_en <= '0';
+
 			when latch_src_lookup_dest =>
-				REG_write_en <= '1';
 				CAM_read_en <='1';
 				next_state <= wait_lookup_res;
 				
