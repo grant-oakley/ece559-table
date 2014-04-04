@@ -14,11 +14,6 @@ entity controller is
         port_num : out std_logic_vector(3 downto 0);
         port_vld : out std_logic;
 		  
-		debug_state: out std_LOGIC_VECTOR(2 downto 0);
-		debug_reg_1_out : out std_LOGIC_VECTOR(31 downto 0);
-		debug_CAM_write_addr : out std_LOGIC_VECTOR(47 downto 0);
-		debug_CAM_write_port : out std_LOGIC_VECTOR(3 downto 0);
-		debug_reg_2_out : out std_LOGIC_VECTOR(47 downto 0)
     );
 end controller;
 
@@ -70,7 +65,7 @@ architecture fsm of controller is
     end component;
     
 
-type state_type is (idle, lookup_dest,wait_lookup_res, output_ready, query_src_addr, query_LRU, wait_LRU_res, update_CAM, update_CAM_cont, latch_input);
+type state_type is (idle, lookup_dest,wait_lookup_res, output_ready, query_src_addr, query_LRU, wait_LRU_res, update_CAM, update_CAM_cont);
 signal current_state, next_state: state_type;
 
 --register signals
@@ -140,40 +135,29 @@ process(current_state, data_vld, CAM_read_output_valid,dest_addr, CAM_idx_out, C
 		CAM_write_addr <= "000000000000000000000000000000000000000000000000";
 		CAM_write_port <= "0000";
 		next_state <= idle;
-		debug_reg_2_out <= REG_2_out;
 		
 		case current_state is
 			when idle =>
 				if data_vld = '1' then
 					REG_2_write_en <= '1';
 					REG_write_en <= '1';
-					next_state <= latch_input;
+					next_state <= lookup_dest;
 				else 
 					next_state <= idle;
 				end if;
 				
 				--default signals
-				debug_state<= "000";
 				port_vld <= '0';
 				CAM_read_en <= '0';
 				CAM_write_en <= '0';
 				LRU_en <='0';
 
-			when latch_input =>
-				next_state <= lookup_dest;
-				--default signals
-				debug_state<= "001";
-				port_vld <= '0';
-				CAM_read_en <= '0';
-				CAM_write_en <= '0';
-				LRU_en <='0';
 			when lookup_dest =>
 				CAM_read_en <='1';
 				CAM_read_addr <= REG_2_out;
 				next_state <= wait_lookup_res;
 				
 				--default signals
-				debug_state <= "010";
 				port_vld <= '0';
 				LRU_en <= '0';
 				CAM_write_en <= '0';
@@ -186,7 +170,6 @@ process(current_state, data_vld, CAM_read_output_valid,dest_addr, CAM_idx_out, C
 				end if;
 								
 				--default signals
-				debug_state<= "011";
 				port_vld <= '0';
 				LRU_en <= '0';
 				CAM_read_en <= '0';
@@ -201,8 +184,6 @@ process(current_state, data_vld, CAM_read_output_valid,dest_addr, CAM_idx_out, C
 				end if;
 				next_state <= query_src_addr;
 				
-				--default signals
-				debug_state<= "100";
 				port_vld <= '1';
 				CAM_read_en <= '0';
 				CAM_write_en <= '0';
@@ -221,7 +202,6 @@ process(current_state, data_vld, CAM_read_output_valid,dest_addr, CAM_idx_out, C
 					next_state <= query_src_addr;
 				end if;
 				--default signals
-				debug_state<= "101";
 				LRU_en <= '0';
 				port_vld <= '0';	
 			when query_LRU =>
@@ -230,7 +210,6 @@ process(current_state, data_vld, CAM_read_output_valid,dest_addr, CAM_idx_out, C
 				next_state <= wait_LRU_res;
 				
 				--default signals
-				debug_state<= "110";
 				port_vld <= '0';
 				CAM_read_en <= '0';
 				CAM_write_en <= '0';
@@ -245,7 +224,6 @@ process(current_state, data_vld, CAM_read_output_valid,dest_addr, CAM_idx_out, C
 				end if;
 				LRU_en <= '0';
 				--default signals
-				debug_state<= "110";
 				port_vld <= '0';
 				CAM_read_en <= '0';
 				CAM_write_en <= '0';
@@ -258,15 +236,9 @@ process(current_state, data_vld, CAM_read_output_valid,dest_addr, CAM_idx_out, C
 				next_state <= update_CAM_cont;
 				
 				--default signals
-				debug_state<= "111";
 				port_vld <= '0';
 				CAM_read_en <= '0';
 				REG_1_write_en <= '0';
-				
-				--debug signals
-				debug_reg_1_out <= REG_1_out;
-				debug_CAM_write_addr <= REG_out(51 downto 4);
-				debug_CAM_write_port <= REG_out(3 downto 0);
 				
 			when update_CAM_cont => 
 				CAM_write_en <= '1';
@@ -277,16 +249,10 @@ process(current_state, data_vld, CAM_read_output_valid,dest_addr, CAM_idx_out, C
 				next_state <= idle;
 				
 				--default signals
-				debug_state<= "111";
 				port_vld <= '0';
 				CAM_read_en <= '0';
 				REG_1_write_en <= '0';
-				
-				--debug signals
-				debug_reg_1_out <= REG_1_out;
-				debug_CAM_write_addr <= REG_out(51 downto 4);
-				debug_CAM_write_port <= REG_out(3 downto 0);
-				
+
 				
 				
 		end case;
