@@ -12,7 +12,7 @@ entity controller is
         data_vld : in std_logic;
         
         port_num : out std_logic_vector(3 downto 0);
-        port_vld : out std_logic;
+        port_vld : out std_logic
 		  
     );
 end controller;
